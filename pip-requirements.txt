@@ -1,0 +1,12 @@
+# pip reqs
+torch
+torchvision
+numpy
+scipy
+scikit-image
+rawpy
+opencv-python
+imageio
+pillow
+requests
+colour-demosaicing
