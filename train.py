@@ -80,12 +80,16 @@ def Run():
         wrapper.metaDict["model_tune_state"] = False
         wrapper.Save(WEIGHTS_DIRECTORY)
 
-    wrapper.LoadWeights(WEIGHTS_DIRECTORY, strictWeightLoad=True)
-    isModelInTuneState = wrapper.metaDict["model_tune_state"]
-
-    wrapper.OnTrainEpoch += lambda *args: wrapper.Save(WEIGHTS_DIRECTORY)
+    else:
+        checkpoint = torch.load(WEIGHTS_DIRECTORY)
+        isModelInTuneState = checkpoint["META"]["model_tune_state"]
+        del checkpoint
 
     if not isModelInTuneState:
+
+        wrapper.OnTrainEpoch += lambda *args: wrapper.Save(WEIGHTS_DIRECTORY)
+
+        wrapper.LoadWeights(WEIGHTS_DIRECTORY, strictWeightLoad=True)
 
         trainDataloader = dataloaderFactory.GetTrain(
             trainTransforms, trainInputFilter, trainTruthFilter
