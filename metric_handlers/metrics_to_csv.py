@@ -1,7 +1,7 @@
 from metric_handlers import Metric
 from typing import Dict, List
 
-from csv_writer_wrapper import CSVWriterWrapper
+from util.csv_writer_wrapper import CSVWriterWrapper
 
 
 class MetricsToCsv:

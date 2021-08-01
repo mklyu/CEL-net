@@ -12,11 +12,11 @@ import functools
 import numpy as np
 import imageio
 
-from model_wrapper import ModelWrapper
+from util.model_wrapper import ModelWrapper
 from image_dataset.dataset_loaders.CEL import CELDataloaderFactory, cel_filters
 import metric_handlers
 from networks import CELNet
-import common
+import util.common
 
 # --- General Settings ---
 
