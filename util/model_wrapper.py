@@ -6,7 +6,6 @@ import torch.cuda
 from torch import optim
 from torch.utils.data import DataLoader
 import torch.nn as nn
-import numpy as np
 
 from events import Event
 
