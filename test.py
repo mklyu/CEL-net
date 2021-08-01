@@ -16,7 +16,7 @@ from util.model_wrapper import ModelWrapper
 from image_dataset.dataset_loaders.CEL import CELDataloaderFactory, cel_filters
 import metric_handlers
 from networks import CELNet
-import util.common
+import util.common as common
 
 # --- General Settings ---
 

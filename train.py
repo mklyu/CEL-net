@@ -10,8 +10,8 @@ from torch import optim
 import functools
 from torchvision import transforms
 
-import common
-from model_wrapper import ModelWrapper
+import util.common as common
+from util.model_wrapper import ModelWrapper
 from networks import CELNet
 from image_dataset.dataset_loaders.CEL import CELDataloaderFactory, cel_filters
 
