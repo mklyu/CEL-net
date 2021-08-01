@@ -1,15 +1,6 @@
 import torch
 from torch import nn
 
-
-class NOP(nn.Module):
-    def __init__(self) -> None:
-        super(NOP, self).__init__()
-
-    def forward(self, x):
-        return x
-
-
 class AdaptiveFM(nn.Module):
 
     PARAM_NAME = "transformer"
@@ -31,32 +22,6 @@ class lReLU(nn.Module):
 
     def forward(self, x):
         return torch.max(x * 0.2, x)
-
-
-class AdaConv(nn.Module):
-    def __init__(
-        self,
-        in_channel: int,
-        out_channel: int,
-        conv_kernel: int,
-        ada_kernel: int,
-        adaptive: bool,
-    ) -> None:
-        super(AdaConv, self).__init__()
-
-        conv = nn.Conv2d(
-            in_channels=in_channel, out_channels=out_channel, kernel_size=conv_kernel
-        )
-
-        if adaptive:
-            ada = AdaptiveFM(in_channel=out_channel, kernel_size=ada_kernel)
-            conv = nn.Sequential(conv, ada)
-
-        self.adaconv = conv
-
-    def forward(self, x):
-        return self.adaconv(x)
-
 
 class AdaDoubleConv2d(nn.Module):
     def __init__(
@@ -89,27 +54,3 @@ class AdaDoubleConv2d(nn.Module):
         out = lrelu(out)
 
         return out
-
-
-class Double_Conv2d(nn.Module):
-    def __init__(self, in_channel, out_channel):
-        super(Double_Conv2d, self).__init__()
-        self.double_conv2d = nn.Sequential(
-            nn.Conv2d(
-                in_channels=in_channel,
-                out_channels=out_channel,
-                kernel_size=3,
-                padding=1,
-            ),
-            lReLU(),
-            nn.Conv2d(
-                in_channels=out_channel,
-                out_channels=out_channel,
-                kernel_size=3,
-                padding=1,
-            ),
-            lReLU(),
-        )
-
-    def forward(self, x):
-        return self.double_conv2d(x)
