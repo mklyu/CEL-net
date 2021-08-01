@@ -10,7 +10,7 @@ run setup.sh [./setup.sh]
 
 ## General Usage
 
-Default dataset location is "/dataset/"
+Default dataset location is "dataset/"
 Please download our dataset at: !TODO!
 
 Weights are stored by default at "/local/"
