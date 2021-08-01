@@ -7,7 +7,7 @@ from torch import optim
 from torch.utils.data import DataLoader
 import torch.nn as nn
 
-from events import Event
+from util.events import Event
 
 from typing import Any, Callable, Dict
 
