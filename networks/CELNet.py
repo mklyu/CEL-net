@@ -6,7 +6,7 @@ from networks.blocks import AdaDoubleConv2d, AdaptiveFM
 from . import BaseAdanet
 
 
-class AdaUNet4X3(BaseAdanet):
+class CELNet(BaseAdanet):
     def __init__(self, adaptive: bool = False):
         super().__init__()
         self.adaptive = adaptive

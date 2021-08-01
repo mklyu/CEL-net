@@ -1,8 +1,8 @@
-from .base_adaunet import BaseAdanet
-from .adaunet_4x3 import AdaUNet4X3
+from .base_adanet import BaseAdanet
+from .CELNet import CELNet
 
 
 __all__ = [
     BaseAdanet.__name__,
-    AdaUNet4X3.__name__
+    CELNet.__name__
 ]

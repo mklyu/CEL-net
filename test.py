@@ -15,7 +15,7 @@ import imageio
 from model_wrapper import ModelWrapper
 from image_dataset.dataset_loaders.CEL import CELDataloaderFactory, cel_filters
 import metric_handlers
-from networks import AdaUNet4X3
+from networks import CELNet
 import common
 
 # --- General Settings ---
@@ -126,7 +126,7 @@ def Run():
         testTransforms, testInputFilter, testTruthFilter
     )
 
-    network = AdaUNet4X3(adaptive=True)
+    network = CELNet(adaptive=True)
     optimiser = optim.Adam(network.parameters(), lr=1e-4)
     wrapper = ModelWrapper(network, optimiser, torch.nn.L1Loss(), DEVICE)
 

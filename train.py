@@ -12,7 +12,7 @@ from torchvision import transforms
 
 import common
 from model_wrapper import ModelWrapper
-from networks import AdaUNet4X3
+from networks import CELNet
 from image_dataset.dataset_loaders.CEL import CELDataloaderFactory, cel_filters
 
 # --- General Settings ---
@@ -71,7 +71,7 @@ def Run():
         DATASET_DIRECTORY, batch=BATCH_COUNT, cacheLimit=IMAGE_CACHE_SIZE_MAX,
     )
 
-    network = AdaUNet4X3(adaptive=False)
+    network = CELNet(adaptive=False)
     optimiser = optim.Adam(network.parameters(), lr=1e-4)
     wrapper = ModelWrapper(network, optimiser, torch.nn.L1Loss(), DEVICE)
 
@@ -105,7 +105,7 @@ def Run():
         trainTransforms, tuneInputFilter, tuneTruthFilter
     )
 
-    network = AdaUNet4X3(adaptive=True)
+    network = CELNet(adaptive=True)
     optimParams = network.TuningMode()
 
     optimiser = optim.Adam(optimParams, lr=1e-4)
