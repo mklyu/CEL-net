@@ -127,6 +127,7 @@ class CELDataloaderFactory:
             batch_size=self._batch,
             shuffle=True,
             num_workers=self._datasetWorkers,
+            collate_fn=ImageDataset.collate_fn
         )
         return trainDatasetLoader
 
@@ -144,6 +145,7 @@ class CELDataloaderFactory:
 
         testDatasetLoader = torch.utils.data.DataLoader(
             testDataset, batch_size=1, shuffle=False, num_workers=self._datasetWorkers,
+            collate_fn=ImageDataset.collate_fn
         )
         return testDatasetLoader
 
@@ -161,5 +163,6 @@ class CELDataloaderFactory:
 
         testDatasetLoader = torch.utils.data.DataLoader(
             testDataset, batch_size=1, shuffle=False, num_workers=self._datasetWorkers,
+            collate_fn=ImageDataset.collate_fn
         )
         return testDatasetLoader

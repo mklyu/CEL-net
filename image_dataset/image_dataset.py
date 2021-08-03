@@ -54,7 +54,18 @@ class ImageDataset(Dataset, Generic[TDatasetImage]):
         return [
             transformedTraining,
             transformedGtruth,
+            trainingMeta,
+            gtruthMeta
         ]
+
+    def collate_fn(batch):
+        totalBatches = batch.__len__()
+
+        for index in range(totalBatches):
+            currBatch = batch[index]
+            return currBatch[0],currBatch[1], currBatch[2], currBatch[3]
+
+
 
     def __len__(self):
         return self._dataLength
