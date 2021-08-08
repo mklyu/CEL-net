@@ -9,6 +9,7 @@ import torch.nn as nn
 
 from util.events import Event
 
+from image_dataset.dataset_loaders.CEL import CELImage
 from typing import Any, Callable, Dict
 
 CHECKPOINT_EPOCH_KEYWORD: str = "epoch"
@@ -33,13 +34,15 @@ class OnTrainEpochEvent(Event[Callable[[int], None]]):
 
 
 class OnTestIterEvent(
-    Event[Callable[[torch.Tensor, torch.Tensor, torch.Tensor, float], None]]
+    Event[Callable[[torch.Tensor, torch.Tensor, torch.Tensor, CELImage, CELImage, float], None]]
 ):
     def __call__(
         self,
         inputImage: torch.Tensor,
         gTruthImage: torch.Tensor,
         unetOutput: torch.Tensor,
+        inputMeta: CELImage,
+        gtruthMeta: CELImage,
         loss: float,
     ) -> None:
         super().__call__(inputImage, gTruthImage, unetOutput, loss)
@@ -155,7 +158,7 @@ class ModelWrapper:
             unetOutput = self._model(inputImage)
 
             loss = self._lossFunction(unetOutput, gTruthImage).item()
-            self.OnTestIter(inputImage, gTruthImage, unetOutput, loss)
+            self.OnTestIter(inputImage, gTruthImage, unetOutput,trainMeta, truthMeta, loss)
 
             self._logger.info(
                 "Image %d ModelTime=%.3f"

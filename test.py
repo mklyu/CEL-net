@@ -13,7 +13,11 @@ import numpy as np
 import imageio
 
 from util.model_wrapper import ModelWrapper
-from image_dataset.dataset_loaders.CEL import CELDataloaderFactory, cel_filters
+from image_dataset.dataset_loaders.CEL import (
+    CELDataloaderFactory,
+    cel_filters,
+    CELImage,
+)
 import metric_handlers
 from networks import CELNet
 import util.common as common
@@ -22,14 +26,14 @@ import util.common as common
 
 IMAGE_BPS: int = 16
 # can be a tuple, make sure that values are divisible by 16
-# PATCH_SIZE = (2000,3008) # the maximum for our dataset. You'll probably need to use CPU for this, and around 60 GB of RAM
+# PATCH_SIZE = (2000,3008) # the maximum for our dataset. You'll probably need to use CPU for this, and around 40+ GB of RAM
 PATCH_SIZE: Union[Tuple[int], int] = 512
 # if GPU has insufficient memory (will result in crashes), switch DEVICE to "cpu"
 #  make sure you have enoguh RAM available if you do, especially if you cache images
 DEVICE: str = "cuda:0"
 
 # Maximum memory allowed to be used in megabytes. Approx 80-60 gigabytes is ideal
-# If you are running just one test, set this to 0.
+# If you are running just one test (decided by number of items in TUNE_FACTORS), set this to 0.
 IMAGE_CACHE_SIZE_MAX = 0
 
 OUTPUT_DIRECTORY: str = "./output/"
@@ -42,8 +46,8 @@ TUNE_FACTORS = [0.5]
 SAVE_IMAGE_RATE = 10
 
 # --- Dataset Filtering ---
-TEST_INPUT_EXPOSURE: List[float]  = [0.1]
-TEST_TRUTH_EXPOSURE: List[float]  = [5]
+TEST_INPUT_EXPOSURE: List[float] = [0.1]
+TEST_TRUTH_EXPOSURE: List[float] = [5]
 
 
 def GetTestCallbacks(
@@ -56,6 +60,8 @@ def GetTestCallbacks(
         inputImage: torch.Tensor,
         gTruthImage: torch.Tensor,
         unetOutput: torch.Tensor,
+        inputMeta: CELImage,
+        gtruthMeta: CELImage,
         loss: float,
     ):
 
@@ -74,7 +80,10 @@ def GetTestCallbacks(
 
 
 def GetSaveImagesCallback(
-    wrapper: ModelWrapper, directory: str, rate: int, prefix: str,
+    wrapper: ModelWrapper,
+    directory: str,
+    rate: int,
+    prefix: str,
 ):
 
     imageIndex = [0]
@@ -115,11 +124,17 @@ def Run():
         ]
     )
 
-    testInputFilter = functools.partial(cel_filters.FilterExactInList, TEST_INPUT_EXPOSURE)
-    testTruthFilter = functools.partial(cel_filters.FilterExactInList, TEST_TRUTH_EXPOSURE)
+    testInputFilter = functools.partial(
+        cel_filters.FilterExactInList, TEST_INPUT_EXPOSURE
+    )
+    testTruthFilter = functools.partial(
+        cel_filters.FilterExactInList, TEST_TRUTH_EXPOSURE
+    )
 
     dataloaderFactory = CELDataloaderFactory(
-        DATASET_DIRECTORY, batch=1, cacheLimit=IMAGE_CACHE_SIZE_MAX,
+        DATASET_DIRECTORY,
+        batch=1,
+        cacheLimit=IMAGE_CACHE_SIZE_MAX,
     )
 
     testDataloader = dataloaderFactory.GetTest(

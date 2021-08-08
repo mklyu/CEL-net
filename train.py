@@ -80,7 +80,6 @@ def Run():
         wrapper.metaDict["model_tune_state"] = False
         wrapper.Save(WEIGHTS_DIRECTORY)
 
-    else:
         checkpoint = torch.load(WEIGHTS_DIRECTORY)
         isModelInTuneState = checkpoint["META"]["model_tune_state"]
         del checkpoint
