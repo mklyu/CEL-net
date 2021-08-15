@@ -38,7 +38,7 @@ class CELNet(BaseAdanet):
     def forward(self, x, EXIF= None, desiredOutExposure= None):
 
         if(self.adaptive):
-            alpha = self.alphaMeta(x,EXIF,desiredOutExposure)
+            alpha = self.alphaMeta(EXIF)
             self.InterpolateAndLoadWeights(alpha)
 
         conv1 = self.adaConv1(x)
