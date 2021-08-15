@@ -18,7 +18,7 @@ from image_dataset.dataset_loaders.CEL import CELDataloaderFactory, cel_filters
 # --- General Settings ---
 
 IMAGE_BPS: int = 16
-# can be a tuple, make sure that values are divisible by 16
+# can be a 2D tuple, make sure BOTH values are divisible by 16
 PATCH_SIZE: Union[Tuple[int], int] = 512
 
 DEVICE: str = "cuda:0"
@@ -80,9 +80,9 @@ def Run():
         wrapper.metaDict["model_tune_state"] = False
         wrapper.Save(WEIGHTS_DIRECTORY)
 
-        checkpoint = torch.load(WEIGHTS_DIRECTORY)
-        isModelInTuneState = checkpoint["META"]["model_tune_state"]
-        del checkpoint
+    checkpoint = torch.load(WEIGHTS_DIRECTORY)
+    isModelInTuneState = checkpoint["META"]["model_tune_state"]
+    del checkpoint
 
     if not isModelInTuneState:
 
