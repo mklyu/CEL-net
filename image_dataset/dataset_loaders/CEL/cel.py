@@ -1,6 +1,5 @@
 import json
 import rawpy
-import glob
 import os
 import numpy as np
 
@@ -12,22 +11,21 @@ from image_dataset.dataset_loaders import (
 
 from typing import Dict, List, Callable, Union
 
-
-INDOOR_FOLDER = "indoor"
-OUTDOOR_FOLDER = "outdoor"
-
-RAW_FOLDER = "ARW"
-RAW_FORMAT = "ARW"
-
-INDOOR_META_FILE = "indoor_meta.json"
-OUTDOOR_META_FILE = "outdoor_meta.json"
-
+TRAIN_META_DIR = "train.JSON"
+TEST_META_DIR = "test.JSON"
 
 IMAGE_BPS = 16
 
-
 class CELImage(BaseImage):
-    def __init__(self, imagePath: str) -> None:
+    def __init__(
+        self,
+        imagePath: str,
+        scenario: int,
+        location: str,
+        exposure: float,
+        aperture,
+        iso: int,
+    ):
 
         basename = os.path.basename(imagePath)
         formatSplit = basename.rsplit(".", 1)
@@ -35,41 +33,31 @@ class CELImage(BaseImage):
 
         BaseImage.__init__(self, imagePath, format)
 
-        dataSplit = formatSplit[0].split("_")
-
-        self.scenario = int(dataSplit[1])
-
-        self.location = dataSplit[0]
-        self.exposure = float(dataSplit[3])
-
+        self.scenario = scenario
+        self.location = location
+        self.exposure = exposure
+        self.aperture = aperture
+        self.iso = iso
 
     @classmethod
-    def FromArray(cls, array: List[str]):
-        imageArray: List[CELImage] = []
-        for image in array:
-            imageArray.append(cls(image))
+    def FromJSON(cls,relativePath: str, jsonDict: Dict):
 
-        return imageArray
+        outputArr: List[CELImage] = []
 
+        for scenarioKey, scenarioDict in jsonDict.items():
+            for imageKey, imageData in scenarioDict.items():
+                imagePath = relativePath + imageData["location"]
+                scenario = imageData["scenario"]
+                exposure = imageData["exposure"]
+                aperture = imageData["aperture"]
+                location = scenarioKey.split("_")[0]
+                iso = imageData["iso"]
 
-class CELTruthImage(CELImage):
-    def __init__(
-        self,
-        imagePath: str,
-    ) -> None:
-        super().__init__(imagePath)
+                outputArr.append(
+                    cls(imagePath, scenario, location, exposure, aperture, iso)
+                )
 
-    def LoadHook(self):
-        rawImage = rawpy.imread(self.path)
-        postProcImage = rawImage.postprocess(
-            no_auto_bright=True,
-            output_bps=IMAGE_BPS,
-            four_color_rgb=True,
-            use_camera_wb=True,
-        )
-
-        return postProcImage
-
+        return outputArr
 
 class CELPair(BaseDatasetPair):
     def __init__(
@@ -98,6 +86,18 @@ class CELPair(BaseDatasetPair):
         return arr[randint]
 
 
+def RAWImageLoadHook(self: BaseImage):
+    rawImage = rawpy.imread(self.path)
+    postProcImage = rawImage.postprocess(
+        no_auto_bright=True,
+        output_bps=IMAGE_BPS,
+        four_color_rgb=True,
+        use_camera_wb=True,
+    )
+
+    return postProcImage
+
+
 DatasetFilterCallbackType = Callable[[List[CELImage]], List[CELImage]]
 nopFilter: Callable[[List[CELImage]], List[CELImage]] = lambda images: images
 
@@ -112,9 +112,6 @@ class CELDatasetLoader(BaseDatasetLoader):
         self._dir = path
         self._trainFilter = trainFilter
         self._truthFilter = truthFilter
-
-    def _GrabImages(self, path: str, imageFormat: str):
-        return glob.glob(path + "*." + imageFormat)
 
     def _GenerateScenarioDict(self, imageList: List[CELImage]):
         newDict: Dict[int, List[CELImage]] = {}
@@ -131,7 +128,6 @@ class CELDatasetLoader(BaseDatasetLoader):
         self,
         trainList: List[CELImage],
         truthList: List[CELImage],
-        meta: Dict,
     ):
 
         truthDict: Dict[int, List[CELImage]] = {}
@@ -154,10 +150,7 @@ class CELDatasetLoader(BaseDatasetLoader):
             truthInd = truthDict[trainKey]
 
             for index, image in enumerate(truthInd):
-                image = CELTruthImage(
-                    image.path,
-                    meta[image.scenario.__str__()][image.exposure.__str__()],
-                )
+                image.LoadHook = RAWImageLoadHook
                 truthInd[index] = image
 
             newPair = CELPair(trainInd, truthInd)
@@ -167,37 +160,22 @@ class CELDatasetLoader(BaseDatasetLoader):
 
     def GetSet(self):
 
-        indoorPath = self._dir + INDOOR_FOLDER
-        outdoorPath = self._dir + OUTDOOR_FOLDER
+        trainMeta = self._dir + TRAIN_META_DIR
+        testMeta = self._dir + TEST_META_DIR
 
-        indoorTrain = self._GrabImages(indoorPath + "/" + RAW_FOLDER + "/", RAW_FORMAT)
-        outdoorTrain = self._GrabImages(
-            outdoorPath + "/" + RAW_FOLDER + "/", RAW_FORMAT
-        )
+        with open(trainMeta, "r") as file:
+            trainDict = json.load(file)
 
-        indoorTruth = self._GrabImages(indoorPath + "/" + RAW_FOLDER + "/", RAW_FORMAT)
-        outdoorTruth = self._GrabImages(
-            outdoorPath + "/" + RAW_FOLDER + "/", RAW_FORMAT
-        )
+        with open(testMeta, "r") as file:
+            testDict = json.load(file)
 
-        with open(self._dir + "/" + INDOOR_META_FILE, "r") as file:
-            indoorMeta = json.load(file)
-        with open(self._dir + "/" + OUTDOOR_META_FILE, "r") as file:
-            outdoorMeta = json.load(file)
+        trainImageData = CELImage.FromJSON(self._dir,trainDict)
+        testImageData = CELImage.FromJSON(self._dir,testDict)
 
-        outdoorTrain = CELImage.FromArray(outdoorTrain)
-        outdoorTruth = CELImage.FromArray(outdoorTruth)
+        trainImageData = self._trainFilter(trainImageData)
+        testImageData = self._truthFilter(testImageData)
 
-        indoorTrain = CELImage.FromArray(indoorTrain)
-        indoorTruth = CELImage.FromArray(indoorTruth)
+        # associate truth and train with their respective filtered scenarios
+        pairs = self._GeneratePairs(trainImageData, testImageData)
 
-        outdoorTrain = self._trainFilter(outdoorTrain)
-        outdoorTruth = self._truthFilter(outdoorTruth)
-
-        indoorTrain = self._trainFilter(indoorTrain)
-        indoorTruth = self._truthFilter(indoorTruth)
-
-        outdoorPairs = self._GeneratePairs(outdoorTrain, outdoorTruth, outdoorMeta)
-        indoorPairs = self._GeneratePairs(indoorTrain, indoorTruth, indoorMeta)
-
-        return outdoorPairs + indoorPairs
+        return pairs
