@@ -158,24 +158,18 @@ class CELDatasetLoader(BaseDatasetLoader):
 
         return pairs
 
-    def GetSet(self):
+    def GetSet(self, metaFile: str):
 
-        trainMeta = self._dir + TRAIN_META_DIR
-        testMeta = self._dir + TEST_META_DIR
-
-        with open(trainMeta, "r") as file:
+        with open(metaFile, "r") as file:
             trainDict = json.load(file)
 
-        with open(testMeta, "r") as file:
-            testDict = json.load(file)
+        trainImages = CELImage.FromJSON(self._dir,trainDict)
+        truthImages = CELImage.FromJSON(self._dir,trainDict)
 
-        trainImageData = CELImage.FromJSON(self._dir,trainDict)
-        testImageData = CELImage.FromJSON(self._dir,testDict)
-
-        trainImageData = self._trainFilter(trainImageData)
-        testImageData = self._truthFilter(testImageData)
+        trainImages = self._trainFilter(trainImages)
+        truthImages = self._truthFilter(truthImages)
 
         # associate truth and train with their respective filtered scenarios
-        pairs = self._GeneratePairs(trainImageData, testImageData)
+        pairs = self._GeneratePairs(trainImages, truthImages)
 
         return pairs
