@@ -25,7 +25,7 @@ import util.common as common
 # --- General Settings ---
 
 IMAGE_BPS: int = 16
-# can be a tuple, make sure that values are divisible by 16
+# can be a 2D tuple, make sure BOTH values are divisible by 16
 # PATCH_SIZE = (2000,3008) # the maximum for our dataset. You'll probably need to use CPU for this, and around 40+ GB of RAM
 PATCH_SIZE: Union[Tuple[int], int] = 512
 # if GPU has insufficient memory (will result in crashes), switch DEVICE to "cpu"
@@ -92,6 +92,8 @@ def GetSaveImagesCallback(
         inputImage: torch.Tensor,
         gTruthImage: torch.Tensor,
         unetOutput: torch.Tensor,
+        inputMeta: CELImage,
+        gtruthMeta: CELImage,
         loss: float,
     ):
         if (imageIndex[0] % rate) == 0:
@@ -104,7 +106,12 @@ def GetSaveImagesCallback(
 
             convertedImage *= 255
             convertedImage = convertedImage.astype(np.uint8)
-            imageio.imwrite(imdir, convertedImage, "jpg")
+
+            writer : imageio.core.Request = imageio.get_writer(imdir,"jpg", mode="w")
+            metaDict = {}
+            writer.append_data(convertedImage,)
+            
+            # imageio.imwrite(imdir, convertedImage, "jpg")
 
         imageIndex[0] += 1
 
