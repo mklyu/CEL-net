@@ -32,11 +32,14 @@ class AlphaMetaNet(nn.Module):
             if isinstance(module, nn.Linear):
                 module.weight.data.normal_(0.0, 0.2)
 
-    def forward(self, x):
+    def forward(self, x, EXIF, desiredOutExposure):
         out = self.Conv1(x)
         out = lRelu(out)
         out = self.Conv2(out)
         out = lRelu(out)
         out = nn.MaxPool2d(2)
+        out = torch.cat([out,EXIF,desiredOutExposure],1)
+        out = self.FC1(out)
+        out = self.FC2(out)
 
         return out

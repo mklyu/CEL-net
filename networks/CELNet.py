@@ -3,13 +3,16 @@ import torch.nn as nn
 import torch.nn.functional as functional
 
 from networks.blocks import AdaDoubleConv2d, AdaptiveFM
-from . import BaseAdanet
+from . import BaseAdanet, AlphaMetaNet
 
 
 class CELNet(BaseAdanet):
     def __init__(self, adaptive: bool = False):
         super().__init__()
         self.adaptive = adaptive
+
+        if(self.adaptive):
+            self.alphaMeta = AlphaMetaNet()
 
         self.adaConv1 = AdaDoubleConv2d(4, 32, adaptive)
         self.adaConv2 = AdaDoubleConv2d(32, 64, adaptive)
@@ -32,7 +35,12 @@ class CELNet(BaseAdanet):
         self.conv10 = nn.Conv2d(in_channels=32, out_channels=12, kernel_size=1)
         self.ada10 = AdaptiveFM(12, 3)
 
-    def forward(self, x):
+    def forward(self, x, EXIF= None, desiredOutExposure= None):
+
+        if(self.adaptive):
+            alpha = self.alphaMeta(x,EXIF,desiredOutExposure)
+            self.InterpolateAndLoadWeights(alpha)
+
         conv1 = self.adaConv1(x)
         pool1 = functional.max_pool2d(conv1, kernel_size=2)
 
