@@ -8,7 +8,6 @@ from image_dataset.dataset_loaders import (
     BaseDatasetLoader,
     BaseDatasetPair,
     BaseImage,
-    IExposureImage,
 )
 
 from typing import Dict, List, Callable, Union
@@ -27,7 +26,7 @@ OUTDOOR_META_FILE = "outdoor_meta.json"
 IMAGE_BPS = 16
 
 
-class CELImage(BaseImage, IExposureImage):
+class CELImage(BaseImage):
     def __init__(self, imagePath: str) -> None:
 
         basename = os.path.basename(imagePath)
@@ -41,8 +40,8 @@ class CELImage(BaseImage, IExposureImage):
         self.scenario = int(dataSplit[1])
 
         self.location = dataSplit[0]
-        exposure = float(dataSplit[3])
-        IExposureImage.__init__(self, exposure)
+        self.exposure = float(dataSplit[3])
+
 
     @classmethod
     def FromArray(cls, array: List[str]):
@@ -54,10 +53,11 @@ class CELImage(BaseImage, IExposureImage):
 
 
 class CELTruthImage(CELImage):
-    def __init__(self, imagePath: str, focusDistance: float, imageMeta: Dict,) -> None:
+    def __init__(
+        self,
+        imagePath: str,
+    ) -> None:
         super().__init__(imagePath)
-        self._focusDistance = focusDistance
-        self._imageMeta = imageMeta
 
     def LoadHook(self):
         rawImage = rawpy.imread(self.path)
@@ -132,7 +132,6 @@ class CELDatasetLoader(BaseDatasetLoader):
         trainList: List[CELImage],
         truthList: List[CELImage],
         meta: Dict,
-        focusDistance: float,
     ):
 
         truthDict: Dict[int, List[CELImage]] = {}
@@ -157,7 +156,6 @@ class CELDatasetLoader(BaseDatasetLoader):
             for index, image in enumerate(truthInd):
                 image = CELTruthImage(
                     image.path,
-                    focusDistance,
                     meta[image.scenario.__str__()][image.exposure.__str__()],
                 )
                 truthInd[index] = image
@@ -199,7 +197,7 @@ class CELDatasetLoader(BaseDatasetLoader):
         indoorTrain = self._trainFilter(indoorTrain)
         indoorTruth = self._truthFilter(indoorTruth)
 
-        outdoorPairs = self._GeneratePairs(outdoorTrain, outdoorTruth, outdoorMeta, 4)
-        indoorPairs = self._GeneratePairs(indoorTrain, indoorTruth, indoorMeta, 0.5)
+        outdoorPairs = self._GeneratePairs(outdoorTrain, outdoorTruth, outdoorMeta)
+        indoorPairs = self._GeneratePairs(indoorTrain, indoorTruth, indoorMeta)
 
         return outdoorPairs + indoorPairs

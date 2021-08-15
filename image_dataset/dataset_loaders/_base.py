@@ -2,7 +2,6 @@ import imageio
 import rawpy
 from rawpy._rawpy import RawPy
 import abc
-import copy
 
 from typing import List, TypeVar
 
@@ -18,6 +17,7 @@ class BaseImage:
         if self.format == "ARW":
             rawImage: RawPy = rawpy.imread(self.path)
             return rawImage.raw_image_visible
+
         else:
             return imageio.imread(self.path)
 
@@ -26,18 +26,6 @@ class BaseImage:
             return self._cache
 
         return self.LoadHook()
-
-    def SerializeForTorch(self):
-        serialized = copy.copy(self.__dict__)
-
-        del serialized["_cache"]
-
-        return serialized
-
-
-class IExposureImage:
-    def __init__(self, exposure: float) -> None:
-        self.exposure: float = exposure
 
 
 TBaseImage = TypeVar("TBaseImage", bound=BaseImage, covariant=True)

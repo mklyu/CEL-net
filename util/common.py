@@ -4,7 +4,7 @@ from torchvision import transforms
 import numpy as np
 
 from image_dataset import dataset_transforms
-from image_dataset.dataset_loaders import IExposureImage
+from image_dataset.dataset_loaders.CEL import CELImage
 
 RAW_BLACK_LEVEL = 512
 RAW_MAX = 16383
@@ -18,8 +18,8 @@ class NormByExposureTime(dataset_transforms._PairMetaTransform):
         self,
         trainImage: np.ndarray,
         truthImage: np.ndarray,
-        trainingData: IExposureImage,
-        truthData: IExposureImage,
+        trainingData: CELImage,
+        truthData: CELImage,
     ):
         exposureRatio = (float(truthData.exposure) / trainingData.exposure) / (
             RAW_MAX - RAW_BLACK_LEVEL
