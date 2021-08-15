@@ -1,3 +1,4 @@
+from networks import AlphaMetaNet
 import torch.nn as nn
 import copy
 
@@ -45,6 +46,10 @@ class BaseAdanet(nn.Module):
 
                 if activate:
                     returnedParams.append(tensor)
+            
+            if name.find(AlphaMetaNet.__name__) >= 0:
+                # !TODO!
+                pass
 
         return returnedParams
 
@@ -54,7 +59,7 @@ class BaseAdanet(nn.Module):
 
         for name, tensor in interp_dict.items():
 
-            if name.find("transformer") >= 0:
+            if name.find(AdaptiveFM.PARAM_NAME) >= 0:
                 interp_dict[name] = tensor * coefficient
 
         return interp_dict
