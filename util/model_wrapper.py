@@ -45,7 +45,7 @@ class OnTestIterEvent(
         gtruthMeta: CELImage,
         loss: float,
     ) -> None:
-        super().__call__(inputImage, gTruthImage, unetOutput, loss)
+        super().__call__(inputImage, gTruthImage, unetOutput,inputMeta, gtruthMeta, loss)
 
 
 class ModelWrapper:
