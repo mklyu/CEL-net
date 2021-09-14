@@ -1,4 +1,3 @@
-from networks import AlphaMetaNet
 import torch.nn as nn
 import copy
 
@@ -46,10 +45,6 @@ class BaseAdanet(nn.Module):
 
                 if activate:
                     returnedParams.append(tensor)
-            
-            if name.find(AlphaMetaNet.__name__) >= 0:
-                # !TODO!
-                pass
 
         return returnedParams
 

@@ -38,7 +38,7 @@ class CELDataloaderFactory:
         truthFilter: DatasetFilterCallbackType = nopFilter,
     ):
         datasetLoader = CELDatasetLoader(self._dir, inputFilter, truthFilter)
-        trainSet = datasetLoader.GetSet(self._dir + "/train.JSON")
+        trainSet = datasetLoader.GetSet(self._dir + TRAIN_META_DIR)
 
         trainDataset = ImageDataset(trainSet, transforms, cacheLimit=self._cacheLimit)
 
@@ -58,7 +58,7 @@ class CELDataloaderFactory:
         truthFilter: DatasetFilterCallbackType = nopFilter,
     ):
         datasetLoader = CELDatasetLoader(self._dir, inputFilter, truthFilter)
-        testSet = datasetLoader.GetSet(self._dir + "/train.JSON")
+        testSet = datasetLoader.GetSet(self._dir + TEST_META_DIR)
 
         testDataset = ImageDataset(testSet, transforms, cacheLimit=self._cacheLimit)
 

@@ -2,6 +2,7 @@ import json
 import rawpy
 import os
 import numpy as np
+from types import MethodType
 
 from image_dataset.dataset_loaders import (
     BaseDatasetLoader,
@@ -10,9 +11,6 @@ from image_dataset.dataset_loaders import (
 )
 
 from typing import Dict, List, Callable, Union
-
-TRAIN_META_DIR = "train.JSON"
-TEST_META_DIR = "test.JSON"
 
 IMAGE_BPS = 16
 
@@ -150,7 +148,7 @@ class CELDatasetLoader(BaseDatasetLoader):
             truthInd = truthDict[trainKey]
 
             for index, image in enumerate(truthInd):
-                image.LoadHook = RAWImageLoadHook
+                image.LoadHook = MethodType(RAWImageLoadHook,image)
                 truthInd[index] = image
 
             newPair = CELPair(trainInd, truthInd)

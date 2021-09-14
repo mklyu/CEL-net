@@ -111,7 +111,13 @@ class ModelWrapper:
 
                 dataLoadTime = time.time() - dataLoadStartTime
                 self.OnLoadDataEvent(data)
-                inputImage, gTruthImage, trainMeta, truthMeta = data
+                (
+                    inputImage,
+                    gTruthImage,
+                    trainMetaPacked,
+                    trainMeta,
+                    truthMeta,
+                ) = data
 
                 inputImage.requires_grad = True
 
@@ -151,14 +157,22 @@ class ModelWrapper:
         for datasetIndex, data in enumerate(datasetLoader):
 
             self.OnLoadDataEvent(data)
-            inputImage, gTruthImage, trainMeta, truthMeta = data
+            (
+                inputImage,
+                gTruthImage,
+                trainMetaPacked,
+                trainMeta,
+                truthMeta,
+            ) = data
 
             modelProcessingStartTime = time.time()
 
             unetOutput = self._model(inputImage)
 
             loss = self._lossFunction(unetOutput, gTruthImage).item()
-            self.OnTestIter(inputImage, gTruthImage, unetOutput,trainMeta, truthMeta, loss)
+            self.OnTestIter(
+                inputImage, gTruthImage, unetOutput, trainMeta, truthMeta, loss
+            )
 
             self._logger.info(
                 "Image %d ModelTime=%.3f"
