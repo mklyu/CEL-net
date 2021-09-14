@@ -65,8 +65,6 @@ class ImageDataset(Dataset, Generic[TDatasetImage]):
 
         input = batch[0][0].expand(1,-1,-1,-1)
         gtruth = batch[0][1].expand(1,-1,-1,-1)
-        inputMetaPacked = PackMeta(batch[0][2]).expand(1,-1)
-        # gtruthMetaPacked = PackMeta(batch[0][3]).expand(1,-1)
 
         inputMeta = [batch[0][2]]
         gtruthMeta = [batch[0][3]]
@@ -77,23 +75,11 @@ class ImageDataset(Dataset, Generic[TDatasetImage]):
             input = torch.cat([input,currBatch[0].expand(1,-1,-1,-1)],0)
             gtruth = torch.cat([gtruth,currBatch[1].expand(1,-1,-1,-1)],0)
 
-            inputMetaPacked = torch.cat([inputMetaPacked,PackMeta(currBatch[2]).expand(1,-1)],0)
-            # gtruthMetaPacked = torch.cat([gtruthMeta,PackMeta(currBatch[3]).expand(1,-1)],0)
-
             inputMeta.append(currBatch[2])
             gtruthMeta.append(currBatch[3])
 
-        return input, gtruth,inputMetaPacked, inputMeta, gtruthMeta
-
+        return input, gtruth, inputMeta, gtruthMeta
 
 
     def __len__(self):
         return self._dataLength
-
-def PackMeta(meta: CELImage):
-    packedWhitebalance = torch.tensor(meta.cameraWhitebalance).unsqueeze(0)[0] / 2588.0
-    packedDaylightWhitebalance = torch.tensor(meta.daylightWhitebalance).unsqueeze(0)[0] / 2.6
-    packedOthers = torch.tensor([meta.aperture / 7.0,meta.exposure / 16.0, meta.iso / 4000.0]).unsqueeze(0)[0]
-
-    packed = torch.cat([packedWhitebalance,packedDaylightWhitebalance,packedOthers])
-    return packed

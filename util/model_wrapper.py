@@ -114,7 +114,6 @@ class ModelWrapper:
                 (
                     inputImage,
                     gTruthImage,
-                    trainMetaPacked,
                     trainMeta,
                     truthMeta,
                 ) = data
@@ -160,7 +159,6 @@ class ModelWrapper:
             (
                 inputImage,
                 gTruthImage,
-                trainMetaPacked,
                 trainMeta,
                 truthMeta,
             ) = data
