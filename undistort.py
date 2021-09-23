@@ -1,5 +1,7 @@
+from lensf import FOCUS_DISTANCE
 import lensfunpy as lf
 from PIL import Image
+from PIL.ExifTags import TAGS
 import glob
 import cv2
 
@@ -17,7 +19,11 @@ class LFPUndistort:
         self.lens = db.find_lenses(self.cam, "Sony", "E PZ 16-50mm f/3.5-5.6 OSS")[0]
 
     def ConvertImage(
-        self, image, focalLength: float, fNumber: float, focusDistance: float,
+        self,
+        image,
+        focalLength: float,
+        fNumber: float,
+        focusDistance: float,
     ):
         height, width = image.shape[0], image.shape[1]
 
@@ -54,27 +60,28 @@ def GetMetadata(imagename):
 
     return metadata
 
+
 def GetImageName(self, imagePath):
     return imagePath.split("/")[-1][0:-3]
 
+
 if __name__ == "__main__":
 
+    undistort = LFPUndistort()
     inputImages = glob.glob(INPUT_DIR + "*.jpg")
 
     index = 0
     for imagePath in inputImages:
         index += 1
 
+        metadata = GetMetadata(imagePath)
+        image = cv2.imread("tmp_image.tiff", -1)
 
-        metadata = GetMetadata(JPG_DIR + GetImageName(imagePath) + "JPG")
+        imUndistorted = undistort.ConvertImage(
+            image, metadata["FocalLength"], metadata["FNumber"], FOCUS_DISTANCE
+        )
 
-        im = cv2.imread("tmp_image.tiff", -1)
-        height, width = im.shape[0], im.shape[1]
+        undistortedImagePath = OUTPUT_DIR + GetImageName(imagePath) + ".jpg"
 
-        mod = lf.Modifier(lens, cam.crop_factor, width, height)
-        mod.initialize(metadata["FocalLength"], metadata["FNumber"], FOCUS_DISTANCE)
-
-        undistCoords = mod.apply_geometry_distortion()
-        imUndistorted = cv2.remap(im, undistCoords, None, cv2.INTER_LANCZOS4)
         cv2.imwrite(undistortedImagePath, imUndistorted)
         print(undistortedImagePath)
