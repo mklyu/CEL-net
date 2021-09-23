@@ -1,5 +1,7 @@
 # Setup
 
+Run:
+
 > python3 -m venv venv
 
 > pip3 install --upgrade pip
@@ -10,22 +12,22 @@ OR:
 
 > run setup.sh [./setup.sh]
 
-## General Usage
 
-Default dataset location is "dataset/"
+Default dataset location is at "dataset/"
 Please download our dataset at: !TODO!
 
 Weights are stored by default at "/local/"
 Outputs are stored by default at "/output/"
 
-### Train
+# Train
 
+Run:
 
 > source ./venv/bin/activate
 
 > python3 train.py
 
-Arguments to look for:
+Arguments to look for inside [train.py]:
 
 TRAIN_INPUT_EXPOSURE: allowed train stage input exposure
 
@@ -48,7 +50,7 @@ Training will be slow at first,
 If you have enough ram and set cache to be high, the entire dataset will eventually be loaded to RAM and the training process will accelerate.
 
 
-### Inference
+# Inference
 
 > source ./venv/bin/activate
 
@@ -64,3 +66,11 @@ Rest of the arguments are the same as for training.
 
 If you plan to run inference on the full images, chances you will have to switch to CPU. 
 Make sure you have enough RAM for this too (apporx 35+ GB RAM).
+
+# Possible problems
+
+3080ti cards might not work on standard pytorch packages.
+
+This might work:
+
+> pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
