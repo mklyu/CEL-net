@@ -10,3 +10,4 @@ imageio
 pillow
 requests
 colour-demosaicing
+lensfunpy
