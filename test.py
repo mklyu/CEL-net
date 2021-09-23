@@ -107,11 +107,18 @@ def GetSaveImagesCallback(
             convertedImage *= 255
             convertedImage = convertedImage.astype(np.uint8)
 
-            # writer : imageio.core.Request = imageio.get_writer(imdir,"jpg", mode="w")
-            # metaDict = {}
-            # writer.append_data(convertedImage,)
+            writer: imageio.core.Request = imageio.get_writer(imdir, "jpg", mode="w")
+            metaDict = {
+                "Exposure time": gtruthMeta.exposure,
+                "Focal length": gtruthMeta.aperture,
+                "ISO": gtruthMeta.iso,
+            }
             
-            imageio.imwrite(imdir, convertedImage, "jpg")
+            writer.append_data(
+                convertedImage, meta=metaDict
+            )
+
+            # imageio.imwrite(imdir, convertedImage, "jpg")
 
         imageIndex[0] += 1
 
