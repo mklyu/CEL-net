@@ -7,7 +7,12 @@ local/*
 !local/.gitkeep
 
 output/*
+!output/*/
 !output/.gitkeep
+
+output/undistorted/*
+!output/undistorted/.gitkeep
+
 
 tests/*
 !tests/.gitkeep
