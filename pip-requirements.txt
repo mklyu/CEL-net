@@ -11,3 +11,4 @@ pillow
 requests
 colour-demosaicing
 lensfunpy
+exif
