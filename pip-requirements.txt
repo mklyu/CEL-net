@@ -1,4 +1,4 @@
-# pip reqs
+# pip3 requirements
 torch
 torchvision
 numpy
@@ -7,9 +7,5 @@ scikit-image
 rawpy
 opencv-python
 imageio
-pillow
-requests
-colour-demosaicing
 lensfunpy
 exif
-lensfunpy
