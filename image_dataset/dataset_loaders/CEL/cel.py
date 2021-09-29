@@ -14,6 +14,7 @@ from typing import Dict, List, Callable, Union
 
 IMAGE_BPS = 16
 
+
 class CELImage(BaseImage):
     def __init__(
         self,
@@ -21,7 +22,8 @@ class CELImage(BaseImage):
         scenario: int,
         location: str,
         exposure: float,
-        aperture,
+        aperture: float,
+        f_number: float,
         iso: int,
     ):
 
@@ -35,10 +37,11 @@ class CELImage(BaseImage):
         self.location = location
         self.exposure = exposure
         self.aperture = aperture
+        self.f_number = f_number
         self.iso = iso
 
     @classmethod
-    def FromJSON(cls,relativePath: str, jsonDict: Dict):
+    def FromJSON(cls, relativePath: str, jsonDict: Dict):
 
         outputArr: List[CELImage] = []
 
@@ -51,11 +54,17 @@ class CELImage(BaseImage):
                 location = scenarioKey.split("_")[0]
                 iso = imageData["iso"]
 
+                # ! TODO ! read this from the meta (when we get it there)
+                f_number = 5.6
+
                 outputArr.append(
-                    cls(imagePath, scenario, location, exposure, aperture, iso)
+                    cls(
+                        imagePath, scenario, location, exposure, aperture, f_number, iso
+                    )
                 )
 
         return outputArr
+
 
 class CELPair(BaseDatasetPair):
     def __init__(
@@ -148,7 +157,7 @@ class CELDatasetLoader(BaseDatasetLoader):
             truthInd = truthDict[trainKey]
 
             for index, image in enumerate(truthInd):
-                image.LoadHook = MethodType(RAWImageLoadHook,image)
+                image.LoadHook = MethodType(RAWImageLoadHook, image)
                 truthInd[index] = image
 
             newPair = CELPair(trainInd, truthInd)
@@ -161,8 +170,8 @@ class CELDatasetLoader(BaseDatasetLoader):
         with open(metaFile, "r") as file:
             trainDict = json.load(file)
 
-        trainImages = CELImage.FromJSON(self._dir,trainDict)
-        truthImages = CELImage.FromJSON(self._dir,trainDict)
+        trainImages = CELImage.FromJSON(self._dir, trainDict)
+        truthImages = CELImage.FromJSON(self._dir, trainDict)
 
         trainImages = self._trainFilter(trainImages)
         truthImages = self._truthFilter(truthImages)
