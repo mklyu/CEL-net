@@ -1,9 +1,9 @@
-from lensf import FOCUS_DISTANCE
 import lensfunpy as lf
 from PIL import Image
 from PIL.ExifTags import TAGS
 import glob
 import cv2
+import exif
 
 OUTPUT_BPS: int = 16
 INPUT_DIR = "./output/"
@@ -35,53 +35,49 @@ class LFPUndistort:
 
         return imageUndistorted
 
-
-def GetMetadata(imagename):
-
-    image = Image.open(imagename)
-    # extract EXIF data
-    metadata = {}
-    exifData = image.getexif()
-
-    for tagId in exifData:
-
-        # get the tag name, instead of human unreadable tag id
-        tag = TAGS.get(tagId, tagId)
-        data = exifData.get(tagId)
-
-        # decode bytes
-        if isinstance(data, bytes):
-            try:
-                data = data.decode()
-            except:
-                pass
-
-        metadata[tag] = float(data)
-
-    return metadata
-
-
-def GetImageName(self, imagePath):
+def GetImageName(imagePath):
     return imagePath.split("/")[-1][0:-3]
 
 
 if __name__ == "__main__":
 
+    print("Undistorting images inside " + INPUT_DIR)
+    print("Output path set to " + OUTPUT_DIR)
+
     undistort = LFPUndistort()
     inputImages = glob.glob(INPUT_DIR + "*.jpg")
 
+    totalImages = inputImages.__len__()
+
     index = 0
     for imagePath in inputImages:
-        index += 1
 
-        metadata = GetMetadata(imagePath)
-        image = cv2.imread("tmp_image.tiff", -1)
+        index += 1
+        print(index.__str__() + " of " + totalImages.__str__())
+
+        image = cv2.imread(imagePath, -1)
+        imageExif = exif.Image(imagePath)
+
+        try:
+            focalLength = imageExif.focal_length
+            fNumber = imageExif.f_number
+            userComment = imageExif.user_comment
+        except AttributeError:
+            raise Exception("Failed to read EXIF from " + imagePath)
+
+        focusDistance = 10
+        if userComment== "indoor":
+            focusDistance = 4
+        if userComment == "outdoor":
+            focusDistance = 20
 
         imUndistorted = undistort.ConvertImage(
-            image, metadata["FocalLength"], metadata["FNumber"], FOCUS_DISTANCE
+            image, imageExif.focal_length, imageExif.f_number, focusDistance
         )
 
         undistortedImagePath = OUTPUT_DIR + GetImageName(imagePath) + ".jpg"
-
         cv2.imwrite(undistortedImagePath, imUndistorted)
-        print(undistortedImagePath)
+
+    print("Done")
+
+        
