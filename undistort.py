@@ -1,6 +1,4 @@
 import lensfunpy as lf
-from PIL import Image
-from PIL.ExifTags import TAGS
 import glob
 import cv2
 import exif
