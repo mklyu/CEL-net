@@ -12,3 +12,4 @@ requests
 colour-demosaicing
 lensfunpy
 exif
+lensfunpy
