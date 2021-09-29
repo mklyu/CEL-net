@@ -2,6 +2,7 @@ import os
 import logging
 import sys
 from typing import Union, Tuple, List
+import exif
 
 import torch
 from torchvision import transforms
@@ -97,28 +98,33 @@ def GetSaveImagesCallback(
         loss: float,
     ):
         if (imageIndex[0] % rate) == 0:
+
             imname = prefix + "_" + imageIndex[0].__str__()
             imdir = directory + "/" + imname + ".jpg"
 
             convertedImage = unetOutput[0].permute(1, 2, 0).cpu().data.numpy()
-
             convertedImage = np.minimum(np.maximum(convertedImage, 0), 1)
 
             convertedImage *= 255
             convertedImage = convertedImage.astype(np.uint8)
 
-            writer: imageio.core.Request = imageio.get_writer(imdir, "jpg", mode="i")
-            metaDict = {
-                "Exposure time": gtruthMeta[0].exposure,
-                "Focal length": gtruthMeta[0].aperture,
-                "ISO": gtruthMeta[0].iso,
-            }
-            
-            writer.append_data(
-                convertedImage, meta=metaDict
-            )
+            focal_length = gtruthMeta[0].aperture,
+            f_number = gtruthMeta[0].f_number
+            location = gtruthMeta[0].location
 
-            # imageio.imwrite(imdir, convertedImage, "jpg")
+            imageio.imwrite(imdir, convertedImage, "jpg")
+            
+            # now read the file via exif and store EXIF data
+            # doing this directly via imageio or cv2 proved to be troublesome
+            image = exif.Image(imdir)
+
+            image.focal_length = focal_length
+            image.f_number = f_number
+            image.user_comment = location
+            
+            # write out file
+            file = open(imdir,mode='wb')
+            file.write(image.get_file())
 
         imageIndex[0] += 1
 
