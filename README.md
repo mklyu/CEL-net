@@ -52,6 +52,8 @@ If you have enough ram and set cache to be high, the entire dataset will eventua
 
 # Inference
 
+Run:
+
 > source ./venv/bin/activate
 
 > python3 test.py
@@ -66,6 +68,19 @@ Rest of the arguments are the same as for training.
 
 If you plan to run inference on the full images, chances you will have to switch to CPU. 
 Make sure you have enough RAM for this too (apporx 35+ GB RAM).
+
+# Undistorting outputs
+
+The original dataset photos have a fisheye effect.
+We provided an undistortion code that will fix all the images inside the output/ folder.
+
+The default output of this code is the output/undistorted/ folder.
+
+Simply run:
+
+> python3 undistort.py
+
+
 
 # Possible problems
 
