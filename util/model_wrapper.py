@@ -10,7 +10,7 @@ import torch.nn as nn
 from util.events import Event
 
 from image_dataset.dataset_loaders.CEL import CELImage
-from typing import Any, Callable, Dict
+from typing import Any, Callable, Dict, List
 
 CHECKPOINT_EPOCH_KEYWORD: str = "epoch"
 CHECKPOINT_WEIGHTS_KEYWORD: str = "model_state_dict"
@@ -34,15 +34,15 @@ class OnTrainEpochEvent(Event[Callable[[int], None]]):
 
 
 class OnTestIterEvent(
-    Event[Callable[[torch.Tensor, torch.Tensor, torch.Tensor, CELImage, CELImage, float], None]]
+    Event[Callable[[torch.Tensor, torch.Tensor, torch.Tensor, List[CELImage], List[CELImage], float], None]]
 ):
     def __call__(
         self,
         inputImage: torch.Tensor,
         gTruthImage: torch.Tensor,
         unetOutput: torch.Tensor,
-        inputMeta: CELImage,
-        gtruthMeta: CELImage,
+        inputMeta: List[CELImage],
+        gtruthMeta: List[CELImage],
         loss: float,
     ) -> None:
         super().__call__(inputImage, gTruthImage, unetOutput,inputMeta, gtruthMeta, loss)

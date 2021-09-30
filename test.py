@@ -93,8 +93,8 @@ def GetSaveImagesCallback(
         inputImage: torch.Tensor,
         gTruthImage: torch.Tensor,
         unetOutput: torch.Tensor,
-        inputMeta: CELImage,
-        gtruthMeta: CELImage,
+        inputMeta: List[CELImage],
+        gtruthMeta: List[CELImage],
         loss: float,
     ):
         if (imageIndex[0] % rate) == 0:
@@ -108,7 +108,7 @@ def GetSaveImagesCallback(
             convertedImage *= 255
             convertedImage = convertedImage.astype(np.uint8)
 
-            focal_length = gtruthMeta[0].aperture,
+            focal_length = gtruthMeta[0].focalLength,
             f_number = gtruthMeta[0].f_number
             location = gtruthMeta[0].location
 
