@@ -43,7 +43,7 @@ WEIGHTS_DIRECTORY: str = "./local/model.pt"
 
 TUNE_FACTORS = [0.5]
 
-# Save image rate
+# Write an output image every SAVE_IMAGE_RATE input images
 SAVE_IMAGE_RATE = 10
 
 # --- Dataset Filtering ---
