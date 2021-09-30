@@ -2,7 +2,6 @@ import os
 import logging
 import sys
 from typing import Union, Tuple, List
-import exif
 
 import torch
 from torchvision import transforms
@@ -12,6 +11,7 @@ from torch import optim
 import functools
 import numpy as np
 import imageio
+import exif
 
 from util.model_wrapper import ModelWrapper
 from image_dataset.dataset_loaders.CEL import (
