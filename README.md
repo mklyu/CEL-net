@@ -68,7 +68,8 @@ Will run full tests on each tune factor and save data in [output/] folder.
 
 The rest of the arguments are the same as for training.
 
-If you plan to run inference on the full images, chances you will have to switch to CPU. 
+If you plan to run inference on the full images, chances you will have to switch to CPU.
+
 Make sure you have enough RAM for this too (apporx 35+ GB RAM).
 
 # Undistorting outputs
