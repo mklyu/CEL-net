@@ -22,7 +22,7 @@ class CELImage(BaseImage):
         scenario: int,
         location: str,
         exposure: float,
-        aperture: float,
+        focalLength: float,
         f_number: float,
         iso: int,
     ):
@@ -36,7 +36,7 @@ class CELImage(BaseImage):
         self.scenario = scenario
         self.location = location
         self.exposure = exposure
-        self.aperture = aperture
+        self.focalLength = focalLength
         self.f_number = f_number
         self.iso = iso
 
@@ -50,16 +50,15 @@ class CELImage(BaseImage):
                 imagePath = relativePath + imageData["location"]
                 scenario = imageData["scenario"]
                 exposure = imageData["exposure"]
-                aperture = imageData["aperture"]
+                focal_length = imageData["focal_length"]
+                # fnumber is aperture in our meta JSON files
+                f_number = imageData["aperture"]
                 location = scenarioKey.split("_")[0]
                 iso = imageData["iso"]
 
-                # ! TODO ! read this from the meta (when we get it there)
-                f_number = 5.6
-
                 outputArr.append(
                     cls(
-                        imagePath, scenario, location, exposure, aperture, f_number, iso
+                        imagePath, scenario, location, exposure, focal_length, f_number, iso
                     )
                 )
 
