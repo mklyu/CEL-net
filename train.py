@@ -120,6 +120,7 @@ def Run():
     wrapper.OnTrainEpoch += lambda *args: wrapper.Save(WEIGHTS_DIRECTORY)
 
     wrapper.Train(tuneDataloader, trainToEpoch=4500, learningRate=1e-4)
+    wrapper.Train(tuneDataloader, trainToEpoch=5000, learningRate=1e-5)
 
 
 if __name__ == "__main__":
