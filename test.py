@@ -98,8 +98,8 @@ def GetSaveImagesCallback(
         loss: float,
     ):
         if (imageIndex[0] % rate) == 0:
-
-            imname = prefix + "_" + imageIndex[0].__str__()
+            
+            imname = prefix + "_scenario_" + inputMeta[0].scenario + "_CSVindex_" + imageIndex[0].__str__()
             imdir = directory + "/" + imname + ".jpg"
 
             convertedImage = unetOutput[0].permute(1, 2, 0).cpu().data.numpy()
@@ -191,7 +191,7 @@ def Run():
 
         tuneFactorLambda = lambda *args: tuneFactorMetric.Call(factor)
         saveImageCallback = GetSaveImagesCallback(
-            wrapper, OUTPUT_DIRECTORY, SAVE_IMAGE_RATE, factor.__str__()
+            wrapper, OUTPUT_DIRECTORY, SAVE_IMAGE_RATE, "factor_" + factor.__str__()
         )
 
         wrapper.OnTestIter += tuneFactorLambda
