@@ -155,6 +155,9 @@ class CELDatasetLoader(BaseDatasetLoader):
             trainInd = trainDict[trainKey]
             truthInd = truthDict[trainKey]
 
+            if (trainInd.location != truthInd.location):
+                continue
+
             for index, image in enumerate(truthInd):
                 image.LoadHook = MethodType(RAWImageLoadHook, image)
                 truthInd[index] = image
