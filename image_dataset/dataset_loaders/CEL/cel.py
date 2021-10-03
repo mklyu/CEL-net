@@ -56,6 +56,12 @@ class CELImage(BaseImage):
                 location = scenarioKey.split("_")[0]
                 iso = imageData["iso"]
 
+                # this is a quick fix to the fact that we have indoor and outdoor images with the same scenario index
+                if location == "indoor":
+                    scenario += 1000
+                else:
+                    scenario += 2000
+
                 outputArr.append(
                     cls(
                         imagePath, scenario, location, exposure, focal_length, f_number, iso
@@ -154,7 +160,6 @@ class CELDatasetLoader(BaseDatasetLoader):
         for trainKey in trainDict:
             trainInd = trainDict[trainKey]
             truthInd = truthDict[trainKey]
-
 
             for index, image in enumerate(truthInd):
                 image.LoadHook = MethodType(RAWImageLoadHook, image)
