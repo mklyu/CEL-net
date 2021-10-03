@@ -94,10 +94,10 @@ def Run():
             trainTransforms, trainInputFilter, trainTruthFilter
         )
 
-        wrapper.Train(trainDataloader, trainToEpoch=1000, learningRate=1e-3)
-        wrapper.Train(trainDataloader, trainToEpoch=2000, learningRate=1e-4)
-        wrapper.Train(trainDataloader, trainToEpoch=3000, learningRate=1e-5)
-        wrapper.Train(trainDataloader, trainToEpoch=4000, learningRate=1e-6)
+        wrapper.Train(trainDataloader, trainToEpoch=1000, learningRate=1e-4)
+        wrapper.Train(trainDataloader, trainToEpoch=2000, learningRate=1e-5)
+        wrapper.Train(trainDataloader, trainToEpoch=3000, learningRate=1e-6)
+        wrapper.Train(trainDataloader, trainToEpoch=4000, learningRate=1e-7)
 
         # free up memory
         del trainDataloader
@@ -119,8 +119,9 @@ def Run():
 
     wrapper.OnTrainEpoch += lambda *args: wrapper.Save(WEIGHTS_DIRECTORY)
 
-    wrapper.Train(tuneDataloader, trainToEpoch=4500, learningRate=1e-4)
-    wrapper.Train(tuneDataloader, trainToEpoch=5000, learningRate=1e-5)
+    wrapper.Train(tuneDataloader, trainToEpoch=4350, learningRate=1e-4)
+    wrapper.Train(tuneDataloader, trainToEpoch=4700, learningRate=1e-5)
+    wrapper.Train(tuneDataloader, trainToEpoch=5000, learningRate=1e-6)
 
 
 if __name__ == "__main__":
