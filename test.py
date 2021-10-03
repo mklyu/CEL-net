@@ -99,7 +99,7 @@ def GetSaveImagesCallback(
     ):
         if (imageIndex[0] % rate) == 0:
             
-            imname = prefix + "_scenario_" + inputMeta[0].scenario + "_CSVindex_" + imageIndex[0].__str__()
+            imname = prefix + "_scenario_" + inputMeta[0].scenario.__str__() + "_CSVindex_" + imageIndex[0].__str__()
             imdir = directory + "/" + imname + ".jpg"
 
             convertedImage = unetOutput[0].permute(1, 2, 0).cpu().data.numpy()
