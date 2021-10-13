@@ -4,6 +4,8 @@ dev_misc.txt
 
 dataset/*
 !dataset/.gitkeep
+!dataset/train.JSON
+!dataset/test.JSON
 
 local/*
 !local/.gitkeep
