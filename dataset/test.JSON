@@ -1,0 +1,1682 @@
+{
+    "outdoor_132": {
+        "0.5": {
+            "scenario": 132,
+            "location": "./dataset/test/0.5/outdoor_132.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 132,
+            "location": "./dataset/test/0.1/outdoor_132.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 132,
+            "location": "./dataset/test/1/outdoor_132.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 132,
+            "location": "./dataset/test/5/outdoor_132.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 132,
+            "location": "./dataset/test/10/outdoor_132.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_134": {
+        "0.5": {
+            "scenario": 134,
+            "location": "./dataset/test/0.5/outdoor_134.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 400.0
+        },
+        "0.1": {
+            "scenario": 134,
+            "location": "./dataset/test/0.1/outdoor_134.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 400.0
+        },
+        "1.0": {
+            "scenario": 134,
+            "location": "./dataset/test/1/outdoor_134.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 400.0
+        },
+        "5.0": {
+            "scenario": 134,
+            "location": "./dataset/test/5/outdoor_134.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 400.0
+        },
+        "10.0": {
+            "scenario": 134,
+            "location": "./dataset/test/10/outdoor_134.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 400.0
+        }
+    },
+    "outdoor_135": {
+        "0.5": {
+            "scenario": 135,
+            "location": "./dataset/test/0.5/outdoor_135.ARW",
+            "exposure": 0.5,
+            "focal_length": 23.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 135,
+            "location": "./dataset/test/0.1/outdoor_135.ARW",
+            "exposure": 0.1,
+            "focal_length": 23.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 135,
+            "location": "./dataset/test/1/outdoor_135.ARW",
+            "exposure": 1.0,
+            "focal_length": 23.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 135,
+            "location": "./dataset/test/5/outdoor_135.ARW",
+            "exposure": 5.0,
+            "focal_length": 23.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 135,
+            "location": "./dataset/test/10/outdoor_135.ARW",
+            "exposure": 10.0,
+            "focal_length": 23.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_136": {
+        "0.5": {
+            "scenario": 136,
+            "location": "./dataset/test/0.5/outdoor_136.ARW",
+            "exposure": 0.5,
+            "focal_length": 23.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 136,
+            "location": "./dataset/test/0.1/outdoor_136.ARW",
+            "exposure": 0.1,
+            "focal_length": 23.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 136,
+            "location": "./dataset/test/1/outdoor_136.ARW",
+            "exposure": 1.0,
+            "focal_length": 23.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 136,
+            "location": "./dataset/test/5/outdoor_136.ARW",
+            "exposure": 5.0,
+            "focal_length": 23.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 136,
+            "location": "./dataset/test/10/outdoor_136.ARW",
+            "exposure": 10.0,
+            "focal_length": 23.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_137": {
+        "0.5": {
+            "scenario": 137,
+            "location": "./dataset/test/0.5/outdoor_137.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 137,
+            "location": "./dataset/test/0.1/outdoor_137.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 137,
+            "location": "./dataset/test/1/outdoor_137.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 137,
+            "location": "./dataset/test/5/outdoor_137.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 137,
+            "location": "./dataset/test/10/outdoor_137.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_138": {
+        "0.5": {
+            "scenario": 138,
+            "location": "./dataset/test/0.5/outdoor_138.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 400.0
+        },
+        "0.1": {
+            "scenario": 138,
+            "location": "./dataset/test/0.1/outdoor_138.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 400.0
+        },
+        "1.0": {
+            "scenario": 138,
+            "location": "./dataset/test/1/outdoor_138.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 400.0
+        },
+        "5.0": {
+            "scenario": 138,
+            "location": "./dataset/test/5/outdoor_138.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 400.0
+        },
+        "10.0": {
+            "scenario": 138,
+            "location": "./dataset/test/10/outdoor_138.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 400.0
+        }
+    },
+    "outdoor_139": {
+        "0.5": {
+            "scenario": 139,
+            "location": "./dataset/test/0.5/outdoor_139.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 400.0
+        },
+        "0.1": {
+            "scenario": 139,
+            "location": "./dataset/test/0.1/outdoor_139.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 400.0
+        },
+        "1.0": {
+            "scenario": 139,
+            "location": "./dataset/test/1/outdoor_139.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 400.0
+        },
+        "5.0": {
+            "scenario": 139,
+            "location": "./dataset/test/5/outdoor_139.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 400.0
+        },
+        "10.0": {
+            "scenario": 139,
+            "location": "./dataset/test/10/outdoor_139.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 400.0
+        }
+    },
+    "outdoor_140": {
+        "0.5": {
+            "scenario": 140,
+            "location": "./dataset/test/0.5/outdoor_140.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 5.6,
+            "iso": 1250.0
+        },
+        "0.1": {
+            "scenario": 140,
+            "location": "./dataset/test/0.1/outdoor_140.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 5.6,
+            "iso": 1250.0
+        },
+        "1.0": {
+            "scenario": 140,
+            "location": "./dataset/test/1/outdoor_140.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 5.6,
+            "iso": 1250.0
+        },
+        "5.0": {
+            "scenario": 140,
+            "location": "./dataset/test/5/outdoor_140.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 5.6,
+            "iso": 1250.0
+        },
+        "10.0": {
+            "scenario": 140,
+            "location": "./dataset/test/10/outdoor_140.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 5.6,
+            "iso": 1250.0
+        }
+    },
+    "outdoor_141": {
+        "0.5": {
+            "scenario": 141,
+            "location": "./dataset/test/0.5/outdoor_141.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 141,
+            "location": "./dataset/test/0.1/outdoor_141.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 141,
+            "location": "./dataset/test/1/outdoor_141.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 141,
+            "location": "./dataset/test/5/outdoor_141.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 141,
+            "location": "./dataset/test/10/outdoor_141.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_142": {
+        "0.5": {
+            "scenario": 142,
+            "location": "./dataset/test/0.5/outdoor_142.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 142,
+            "location": "./dataset/test/0.1/outdoor_142.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 142,
+            "location": "./dataset/test/1/outdoor_142.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 142,
+            "location": "./dataset/test/5/outdoor_142.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 142,
+            "location": "./dataset/test/10/outdoor_142.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 10.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_143": {
+        "0.5": {
+            "scenario": 143,
+            "location": "./dataset/test/0.5/outdoor_143.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 143,
+            "location": "./dataset/test/0.1/outdoor_143.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 143,
+            "location": "./dataset/test/1/outdoor_143.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 143,
+            "location": "./dataset/test/5/outdoor_143.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 143,
+            "location": "./dataset/test/10/outdoor_143.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_144": {
+        "0.5": {
+            "scenario": 144,
+            "location": "./dataset/test/0.5/outdoor_144.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 144,
+            "location": "./dataset/test/0.1/outdoor_144.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 144,
+            "location": "./dataset/test/1/outdoor_144.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 144,
+            "location": "./dataset/test/5/outdoor_144.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 144,
+            "location": "./dataset/test/10/outdoor_144.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_145": {
+        "0.5": {
+            "scenario": 145,
+            "location": "./dataset/test/0.5/outdoor_145.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 145,
+            "location": "./dataset/test/0.1/outdoor_145.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 145,
+            "location": "./dataset/test/1/outdoor_145.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 145,
+            "location": "./dataset/test/5/outdoor_145.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 145,
+            "location": "./dataset/test/10/outdoor_145.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_146": {
+        "0.5": {
+            "scenario": 146,
+            "location": "./dataset/test/0.5/outdoor_146.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 146,
+            "location": "./dataset/test/0.1/outdoor_146.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 146,
+            "location": "./dataset/test/1/outdoor_146.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 146,
+            "location": "./dataset/test/5/outdoor_146.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 146,
+            "location": "./dataset/test/10/outdoor_146.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_147": {
+        "0.5": {
+            "scenario": 147,
+            "location": "./dataset/test/0.5/outdoor_147.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 147,
+            "location": "./dataset/test/0.1/outdoor_147.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 147,
+            "location": "./dataset/test/1/outdoor_147.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 147,
+            "location": "./dataset/test/5/outdoor_147.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 147,
+            "location": "./dataset/test/10/outdoor_147.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_148": {
+        "0.5": {
+            "scenario": 148,
+            "location": "./dataset/test/0.5/outdoor_148.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 148,
+            "location": "./dataset/test/0.1/outdoor_148.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 148,
+            "location": "./dataset/test/1/outdoor_148.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 148,
+            "location": "./dataset/test/5/outdoor_148.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 148,
+            "location": "./dataset/test/10/outdoor_148.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_149": {
+        "0.5": {
+            "scenario": 149,
+            "location": "./dataset/test/0.5/outdoor_149.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 149,
+            "location": "./dataset/test/0.1/outdoor_149.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 149,
+            "location": "./dataset/test/1/outdoor_149.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 149,
+            "location": "./dataset/test/5/outdoor_149.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 149,
+            "location": "./dataset/test/10/outdoor_149.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_150": {
+        "0.5": {
+            "scenario": 150,
+            "location": "./dataset/test/0.5/outdoor_150.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 150,
+            "location": "./dataset/test/0.1/outdoor_150.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 150,
+            "location": "./dataset/test/1/outdoor_150.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 150,
+            "location": "./dataset/test/5/outdoor_150.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 150,
+            "location": "./dataset/test/10/outdoor_150.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 320.0
+        }
+    },
+    "indoor_156": {
+        "0.5": {
+            "scenario": 156,
+            "location": "./dataset/test/0.5/indoor_156.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1250.0
+        },
+        "0.1": {
+            "scenario": 156,
+            "location": "./dataset/test/0.1/indoor_156.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1250.0
+        },
+        "1.0": {
+            "scenario": 156,
+            "location": "./dataset/test/1/indoor_156.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1250.0
+        },
+        "5.0": {
+            "scenario": 156,
+            "location": "./dataset/test/5/indoor_156.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1250.0
+        },
+        "10.0": {
+            "scenario": 156,
+            "location": "./dataset/test/10/indoor_156.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1250.0
+        }
+    },
+    "indoor_157": {
+        "0.5": {
+            "scenario": 157,
+            "location": "./dataset/test/0.5/indoor_157.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 5.6,
+            "iso": 2000.0
+        },
+        "0.1": {
+            "scenario": 157,
+            "location": "./dataset/test/0.1/indoor_157.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 5.6,
+            "iso": 2000.0
+        },
+        "1.0": {
+            "scenario": 157,
+            "location": "./dataset/test/1/indoor_157.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 5.6,
+            "iso": 2000.0
+        },
+        "5.0": {
+            "scenario": 157,
+            "location": "./dataset/test/5/indoor_157.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 5.6,
+            "iso": 2000.0
+        },
+        "10.0": {
+            "scenario": 157,
+            "location": "./dataset/test/10/indoor_157.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 5.6,
+            "iso": 2000.0
+        }
+    },
+    "indoor_158": {
+        "0.5": {
+            "scenario": 158,
+            "location": "./dataset/test/0.5/indoor_158.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "0.1": {
+            "scenario": 158,
+            "location": "./dataset/test/0.1/indoor_158.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "1.0": {
+            "scenario": 158,
+            "location": "./dataset/test/1/indoor_158.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "5.0": {
+            "scenario": 158,
+            "location": "./dataset/test/5/indoor_158.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "10.0": {
+            "scenario": 158,
+            "location": "./dataset/test/10/indoor_158.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        }
+    },
+    "indoor_159": {
+        "0.5": {
+            "scenario": 159,
+            "location": "./dataset/test/0.5/indoor_159.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "0.1": {
+            "scenario": 159,
+            "location": "./dataset/test/0.1/indoor_159.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "1.0": {
+            "scenario": 159,
+            "location": "./dataset/test/1/indoor_159.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "5.0": {
+            "scenario": 159,
+            "location": "./dataset/test/5/indoor_159.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "10.0": {
+            "scenario": 159,
+            "location": "./dataset/test/10/indoor_159.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        }
+    },
+    "indoor_160": {
+        "0.5": {
+            "scenario": 160,
+            "location": "./dataset/test/0.5/indoor_160.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "0.1": {
+            "scenario": 160,
+            "location": "./dataset/test/0.1/indoor_160.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "1.0": {
+            "scenario": 160,
+            "location": "./dataset/test/1/indoor_160.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "5.0": {
+            "scenario": 160,
+            "location": "./dataset/test/5/indoor_160.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "10.0": {
+            "scenario": 160,
+            "location": "./dataset/test/10/indoor_160.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        }
+    },
+    "indoor_161": {
+        "0.5": {
+            "scenario": 161,
+            "location": "./dataset/test/0.5/indoor_161.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "0.1": {
+            "scenario": 161,
+            "location": "./dataset/test/0.1/indoor_161.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "1.0": {
+            "scenario": 161,
+            "location": "./dataset/test/1/indoor_161.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "5.0": {
+            "scenario": 161,
+            "location": "./dataset/test/5/indoor_161.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "10.0": {
+            "scenario": 161,
+            "location": "./dataset/test/10/indoor_161.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        }
+    },
+    "indoor_162": {
+        "0.5": {
+            "scenario": 162,
+            "location": "./dataset/test/0.5/indoor_162.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "0.1": {
+            "scenario": 162,
+            "location": "./dataset/test/0.1/indoor_162.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "1.0": {
+            "scenario": 162,
+            "location": "./dataset/test/1/indoor_162.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "5.0": {
+            "scenario": 162,
+            "location": "./dataset/test/5/indoor_162.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        },
+        "10.0": {
+            "scenario": 162,
+            "location": "./dataset/test/10/indoor_162.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 6.3,
+            "iso": 1000.0
+        }
+    },
+    "indoor_163": {
+        "0.5": {
+            "scenario": 163,
+            "location": "./dataset/test/0.5/indoor_163.ARW",
+            "exposure": 0.5,
+            "focal_length": 24.0,
+            "aperture": 5.6,
+            "iso": 1250.0
+        },
+        "0.1": {
+            "scenario": 163,
+            "location": "./dataset/test/0.1/indoor_163.ARW",
+            "exposure": 0.1,
+            "focal_length": 24.0,
+            "aperture": 5.6,
+            "iso": 1250.0
+        },
+        "1.0": {
+            "scenario": 163,
+            "location": "./dataset/test/1/indoor_163.ARW",
+            "exposure": 1.0,
+            "focal_length": 24.0,
+            "aperture": 5.6,
+            "iso": 1250.0
+        },
+        "5.0": {
+            "scenario": 163,
+            "location": "./dataset/test/5/indoor_163.ARW",
+            "exposure": 5.0,
+            "focal_length": 24.0,
+            "aperture": 5.6,
+            "iso": 1250.0
+        },
+        "10.0": {
+            "scenario": 163,
+            "location": "./dataset/test/10/indoor_163.ARW",
+            "exposure": 10.0,
+            "focal_length": 24.0,
+            "aperture": 5.6,
+            "iso": 1250.0
+        }
+    },
+    "indoor_164": {
+        "0.5": {
+            "scenario": 164,
+            "location": "./dataset/test/0.5/indoor_164.ARW",
+            "exposure": 0.5,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "0.1": {
+            "scenario": 164,
+            "location": "./dataset/test/0.1/indoor_164.ARW",
+            "exposure": 0.1,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "1.0": {
+            "scenario": 164,
+            "location": "./dataset/test/1/indoor_164.ARW",
+            "exposure": 1.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "5.0": {
+            "scenario": 164,
+            "location": "./dataset/test/5/indoor_164.ARW",
+            "exposure": 5.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "10.0": {
+            "scenario": 164,
+            "location": "./dataset/test/10/indoor_164.ARW",
+            "exposure": 10.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        }
+    },
+    "indoor_165": {
+        "0.5": {
+            "scenario": 165,
+            "location": "./dataset/test/0.5/indoor_165.ARW",
+            "exposure": 0.5,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "0.1": {
+            "scenario": 165,
+            "location": "./dataset/test/0.1/indoor_165.ARW",
+            "exposure": 0.1,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "1.0": {
+            "scenario": 165,
+            "location": "./dataset/test/1/indoor_165.ARW",
+            "exposure": 1.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "5.0": {
+            "scenario": 165,
+            "location": "./dataset/test/5/indoor_165.ARW",
+            "exposure": 5.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "10.0": {
+            "scenario": 165,
+            "location": "./dataset/test/10/indoor_165.ARW",
+            "exposure": 10.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        }
+    },
+    "indoor_166": {
+        "0.5": {
+            "scenario": 166,
+            "location": "./dataset/test/0.5/indoor_166.ARW",
+            "exposure": 0.5,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "0.1": {
+            "scenario": 166,
+            "location": "./dataset/test/0.1/indoor_166.ARW",
+            "exposure": 0.1,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "1.0": {
+            "scenario": 166,
+            "location": "./dataset/test/1/indoor_166.ARW",
+            "exposure": 1.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "5.0": {
+            "scenario": 166,
+            "location": "./dataset/test/5/indoor_166.ARW",
+            "exposure": 5.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "10.0": {
+            "scenario": 166,
+            "location": "./dataset/test/10/indoor_166.ARW",
+            "exposure": 10.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        }
+    },
+    "indoor_167": {
+        "0.5": {
+            "scenario": 167,
+            "location": "./dataset/test/0.5/indoor_167.ARW",
+            "exposure": 0.5,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "0.1": {
+            "scenario": 167,
+            "location": "./dataset/test/0.1/indoor_167.ARW",
+            "exposure": 0.1,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "1.0": {
+            "scenario": 167,
+            "location": "./dataset/test/1/indoor_167.ARW",
+            "exposure": 1.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "5.0": {
+            "scenario": 167,
+            "location": "./dataset/test/5/indoor_167.ARW",
+            "exposure": 5.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "10.0": {
+            "scenario": 167,
+            "location": "./dataset/test/10/indoor_167.ARW",
+            "exposure": 10.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        }
+    },
+    "indoor_168": {
+        "0.5": {
+            "scenario": 168,
+            "location": "./dataset/test/0.5/indoor_168.ARW",
+            "exposure": 0.5,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "0.1": {
+            "scenario": 168,
+            "location": "./dataset/test/0.1/indoor_168.ARW",
+            "exposure": 0.1,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "1.0": {
+            "scenario": 168,
+            "location": "./dataset/test/1/indoor_168.ARW",
+            "exposure": 1.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "5.0": {
+            "scenario": 168,
+            "location": "./dataset/test/5/indoor_168.ARW",
+            "exposure": 5.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        },
+        "10.0": {
+            "scenario": 168,
+            "location": "./dataset/test/10/indoor_168.ARW",
+            "exposure": 10.0,
+            "focal_length": 24.0,
+            "aperture": 13.0,
+            "iso": 640.0
+        }
+    },
+    "indoor_169": {
+        "0.5": {
+            "scenario": 169,
+            "location": "./dataset/test/0.5/indoor_169.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 9.0,
+            "iso": 640.0
+        },
+        "0.1": {
+            "scenario": 169,
+            "location": "./dataset/test/0.1/indoor_169.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 9.0,
+            "iso": 640.0
+        },
+        "1.0": {
+            "scenario": 169,
+            "location": "./dataset/test/1/indoor_169.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 9.0,
+            "iso": 640.0
+        },
+        "5.0": {
+            "scenario": 169,
+            "location": "./dataset/test/5/indoor_169.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 9.0,
+            "iso": 640.0
+        },
+        "10.0": {
+            "scenario": 169,
+            "location": "./dataset/test/10/indoor_169.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 9.0,
+            "iso": 640.0
+        }
+    },
+    "indoor_170": {
+        "0.5": {
+            "scenario": 170,
+            "location": "./dataset/test/0.5/indoor_170.ARW",
+            "exposure": 0.5,
+            "focal_length": 27.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 170,
+            "location": "./dataset/test/0.1/indoor_170.ARW",
+            "exposure": 0.1,
+            "focal_length": 27.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 170,
+            "location": "./dataset/test/1/indoor_170.ARW",
+            "exposure": 1.0,
+            "focal_length": 27.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 170,
+            "location": "./dataset/test/5/indoor_170.ARW",
+            "exposure": 5.0,
+            "focal_length": 27.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 170,
+            "location": "./dataset/test/10/indoor_170.ARW",
+            "exposure": 10.0,
+            "focal_length": 27.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        }
+    },
+    "indoor_171": {
+        "0.5": {
+            "scenario": 171,
+            "location": "./dataset/test/0.5/indoor_171.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 171,
+            "location": "./dataset/test/0.1/indoor_171.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 171,
+            "location": "./dataset/test/1/indoor_171.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 171,
+            "location": "./dataset/test/5/indoor_171.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 171,
+            "location": "./dataset/test/10/indoor_171.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        }
+    },
+    "indoor_172": {
+        "0.5": {
+            "scenario": 172,
+            "location": "./dataset/test/0.5/indoor_172.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 172,
+            "location": "./dataset/test/0.1/indoor_172.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 172,
+            "location": "./dataset/test/1/indoor_172.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 172,
+            "location": "./dataset/test/5/indoor_172.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 172,
+            "location": "./dataset/test/10/indoor_172.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        }
+    },
+    "indoor_173": {
+        "0.5": {
+            "scenario": 173,
+            "location": "./dataset/test/0.5/indoor_173.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 173,
+            "location": "./dataset/test/0.1/indoor_173.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 173,
+            "location": "./dataset/test/1/indoor_173.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 173,
+            "location": "./dataset/test/5/indoor_173.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 173,
+            "location": "./dataset/test/10/indoor_173.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        }
+    },
+    "indoor_174": {
+        "0.5": {
+            "scenario": 174,
+            "location": "./dataset/test/0.5/indoor_174.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 174,
+            "location": "./dataset/test/0.1/indoor_174.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 174,
+            "location": "./dataset/test/1/indoor_174.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 174,
+            "location": "./dataset/test/5/indoor_174.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 174,
+            "location": "./dataset/test/10/indoor_174.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        }
+    },
+    "indoor_175": {
+        "0.5": {
+            "scenario": 175,
+            "location": "./dataset/test/0.5/indoor_175.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "0.1": {
+            "scenario": 175,
+            "location": "./dataset/test/0.1/indoor_175.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "1.0": {
+            "scenario": 175,
+            "location": "./dataset/test/1/indoor_175.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "5.0": {
+            "scenario": 175,
+            "location": "./dataset/test/5/indoor_175.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        },
+        "10.0": {
+            "scenario": 175,
+            "location": "./dataset/test/10/indoor_175.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 14.0,
+            "iso": 320.0
+        }
+    },
+    "outdoor_131": {
+        "0.5": {
+            "scenario": 131,
+            "location": "./dataset/test/0.5/outdoor_131.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 400.0
+        },
+        "0.1": {
+            "scenario": 131,
+            "location": "./dataset/test/0.1/outdoor_131.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 400.0
+        },
+        "1.0": {
+            "scenario": 131,
+            "location": "./dataset/test/1/outdoor_131.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 400.0
+        },
+        "5.0": {
+            "scenario": 131,
+            "location": "./dataset/test/5/outdoor_131.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 400.0
+        },
+        "10.0": {
+            "scenario": 131,
+            "location": "./dataset/test/10/outdoor_131.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 11.0,
+            "iso": 400.0
+        }
+    },
+    "outdoor_130": {
+        "0.5": {
+            "scenario": 130,
+            "location": "./dataset/test/0.5/outdoor_130.ARW",
+            "exposure": 0.5,
+            "focal_length": 16.0,
+            "aperture": 8.0,
+            "iso": 400.0
+        },
+        "0.1": {
+            "scenario": 130,
+            "location": "./dataset/test/0.1/outdoor_130.ARW",
+            "exposure": 0.1,
+            "focal_length": 16.0,
+            "aperture": 8.0,
+            "iso": 400.0
+        },
+        "1.0": {
+            "scenario": 130,
+            "location": "./dataset/test/1/outdoor_130.ARW",
+            "exposure": 1.0,
+            "focal_length": 16.0,
+            "aperture": 8.0,
+            "iso": 400.0
+        },
+        "5.0": {
+            "scenario": 130,
+            "location": "./dataset/test/5/outdoor_130.ARW",
+            "exposure": 5.0,
+            "focal_length": 16.0,
+            "aperture": 8.0,
+            "iso": 400.0
+        },
+        "10.0": {
+            "scenario": 130,
+            "location": "./dataset/test/10/outdoor_130.ARW",
+            "exposure": 10.0,
+            "focal_length": 16.0,
+            "aperture": 8.0,
+            "iso": 400.0
+        }
+    }
+}
