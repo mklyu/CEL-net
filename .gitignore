@@ -1,6 +1,7 @@
 __pycache__
 
 dev/*
+.vscode/*
 
 dataset/*
 !dataset/.gitkeep
