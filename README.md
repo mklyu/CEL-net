@@ -16,7 +16,9 @@ OR:
 
 
 Default dataset location is at the [dataset/] folder
-Please download our dataset at: !TODO!
+
+Please download our dataset at: https://arielacil-my.sharepoint.com/:f:/g/personal/neiterman_ariel_ac_il/EruoYnkCjzREtC1hbPRN3Y0BQahIPkyMVfy-dp2AqiioGQ?e=3a59ro
+Download the [test] and [train] folders and move them to the [dataset/] folder
 
 Weights are stored by default at the [local/] folder
 Outputs are stored by default at the [output/] folder
@@ -87,7 +89,7 @@ Simply run:
 
 # Possible problems
 
-3080ti cards might not work on standard pytorch packages (as of september 2021).
+3080ti cards might not work on standard pytorch pip packages (as of september 2021).
 
 This might help:
 
