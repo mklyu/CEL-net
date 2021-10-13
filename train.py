@@ -30,7 +30,7 @@ BATCH_COUNT = 2
 # Maximum RAM allowed to be used in megabytes. Approx 80-60 gigabytes is optimal
 IMAGE_CACHE_SIZE_MAX = 10000
 
-DATASET_DIRECTORY: str = "./dataset/"
+META_FILES_DIRECTORY: str = "./dataset/"
 WEIGHTS_DIRECTORY: str = "./local/model.pt"
 
 # --- Dataset Filtering ---

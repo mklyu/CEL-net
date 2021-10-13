@@ -37,9 +37,9 @@ DEVICE: str = "cuda:0"
 # If you are running just one test (decided by number of items in TUNE_FACTORS), set this to 0.
 IMAGE_CACHE_SIZE_MAX = 0
 
-OUTPUT_DIRECTORY: str = "./output/"
-DATASET_DIRECTORY: str = "./dataset/"
+META_FILES_DIRECTORY: str = "./dataset/"
 WEIGHTS_DIRECTORY: str = "./local/model.pt"
+OUTPUT_DIRECTORY: str = "./output/"
 
 TUNE_FACTORS = [0.5]
 
