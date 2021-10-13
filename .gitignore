@@ -1,6 +1,6 @@
 __pycache__
 
-dev_misc.txt
+./dev/*
 
 dataset/*
 !dataset/.gitkeep
