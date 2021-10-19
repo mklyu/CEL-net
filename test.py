@@ -152,7 +152,7 @@ def Run():
     )
 
     dataloaderFactory = CELDataloaderFactory(
-        DATASET_DIRECTORY,
+        META_FILES_DIRECTORY,
         batch=1,
         cacheLimit=IMAGE_CACHE_SIZE_MAX,
     )

@@ -68,7 +68,7 @@ def Run():
     tuneTruthFilter = functools.partial(cel_filters.FilterExactInList, TUNE_TRUTH_EXPOSURE)
 
     dataloaderFactory = CELDataloaderFactory(
-        DATASET_DIRECTORY, batch=BATCH_COUNT, cacheLimit=IMAGE_CACHE_SIZE_MAX,
+        META_FILES_DIRECTORY, batch=BATCH_COUNT, cacheLimit=IMAGE_CACHE_SIZE_MAX,
     )
 
     network = CELNet(adaptive=False)
