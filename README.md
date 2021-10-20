@@ -18,7 +18,9 @@ OR:
 Default dataset location is at the [dataset/] folder
 
 Please download our dataset at: https://arielacil-my.sharepoint.com/:f:/g/personal/neiterman_ariel_ac_il/EruoYnkCjzREtC1hbPRN3Y0BQahIPkyMVfy-dp2AqiioGQ?e=3a59ro
-Download the [test] and [train] folders and move them to the [dataset/] folder
+Download the [test] and [train] folders and move them to the [dataset/] folder.
+The JPG are the camera's ISP output, they are not needed.
+If any errors occur during download or unzipping, try downloading subfolders manually and combine them into the original structure.
 
 Weights are stored by default at the [local/] folder
 Outputs are stored by default at the [output/] folder
@@ -49,9 +51,9 @@ TRAIN_INPUT_EXPOSURE = [0.1,0.5,1]
 
 TRAIN_TRUTH_EXPOSURE = [10]
 
-If you have enough ram and set cache to be high, the entire dataset will eventually be loaded to RAM and the training process will accelerate (should take about a day, depends on your machine).
+If you have enough RAM and set cache to be high, the entire dataset will eventually be loaded to RAM and the training process will accelerate (should take about a day, depends on your machine).
 
-Training directly from the disc (i.e. 0 RAM allocated) might take a week or so.
+Training directly from the disk (i.e. 0 RAM allocated) might take a week or two, depending on your disk speed.
 
 
 # Inference
