@@ -74,8 +74,14 @@ def GetTestCallbacks(
 
         unetOutputProcessed = np.minimum(np.maximum(unetOutputProcessed, 0), 1)
 
-        PSNR.Call(gtruthProcessed, unetOutputProcessed)
-        SSIM.Call(gtruthProcessed, unetOutputProcessed)
+        PSNR.Call(
+            (gtruthProcessed * 255).astype("uint8"),
+            (unetOutputProcessed * 255).astype("uint8"),
+        )
+        SSIM.Call(
+            (gtruthProcessed * 255).astype("uint8"),
+            (unetOutputProcessed * 255).astype("uint8"),
+        )
 
     return SaveMetrics
 
@@ -98,8 +104,14 @@ def GetSaveImagesCallback(
         loss: float,
     ):
         if (imageIndex[0] % rate) == 0:
-            
-            imname = prefix + "_scenario_" + inputMeta[0].scenario.__str__() + "_CSVindex_" + imageIndex[0].__str__()
+
+            imname = (
+                prefix
+                + "_scenario_"
+                + inputMeta[0].scenario.__str__()
+                + "_CSVindex_"
+                + imageIndex[0].__str__()
+            )
             imdir = directory + "/" + imname + ".jpg"
 
             convertedImage = unetOutput[0].permute(1, 2, 0).cpu().data.numpy()
@@ -108,12 +120,12 @@ def GetSaveImagesCallback(
             convertedImage *= 255
             convertedImage = convertedImage.astype(np.uint8)
 
-            focal_length = gtruthMeta[0].focalLength,
+            focal_length = (gtruthMeta[0].focalLength,)
             f_number = gtruthMeta[0].f_number
             location = gtruthMeta[0].location
 
             imageio.imwrite(imdir, convertedImage, "jpg")
-            
+
             # now read the file via exif and store EXIF data
             # doing this directly via imageio or cv2 proved to be troublesome
             image = exif.Image(imdir)
@@ -121,9 +133,9 @@ def GetSaveImagesCallback(
             image.focal_length = focal_length
             image.f_number = f_number
             image.user_comment = location
-            
+
             # write out file
-            file = open(imdir,mode='wb')
+            file = open(imdir, mode="wb")
             file.write(image.get_file())
 
         imageIndex[0] += 1
@@ -165,8 +177,8 @@ def Run():
     optimiser = optim.Adam(network.parameters(), lr=1e-4)
     wrapper = ModelWrapper(network, optimiser, torch.nn.L1Loss(), DEVICE)
 
-    metricPSNR = metric_handlers.PSNR(name="PSNR")
-    metricSSIM = metric_handlers.SSIM(multichannel=True, name="SSIM")
+    metricPSNR = metric_handlers.PSNR(name="PSNR", dataRange=255)
+    metricSSIM = metric_handlers.SSIM(multichannel=True, name="SSIM", dataRange=255)
     tuneFactorMetric = metric_handlers.Metric[float](name="Tune factor")
     imageNumberMetric = metric_handlers.Metric[int](name="Image")
 
