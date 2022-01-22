@@ -37,7 +37,8 @@ DEVICE: str = "cuda:0"
 # If you are running just one test (decided by number of items in TUNE_FACTORS), set this to 0.
 IMAGE_CACHE_SIZE_MAX = 0
 
-META_FILES_DIRECTORY: str = "./dataset/"
+TRAIN_JSON: str = "./dataset/train.JSON"
+TEST_JSON: str = "./dataset/test.JSON"
 WEIGHTS_DIRECTORY: str = "./local/model.pt"
 OUTPUT_DIRECTORY: str = "./output/"
 
@@ -164,7 +165,8 @@ def Run():
     )
 
     dataloaderFactory = CELDataloaderFactory(
-        META_FILES_DIRECTORY,
+        TRAIN_JSON,
+        TEST_JSON,
         batch=1,
         cacheLimit=IMAGE_CACHE_SIZE_MAX,
     )

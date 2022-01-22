@@ -173,10 +173,10 @@ class CELDatasetLoader(BaseDatasetLoader):
     def GetSet(self, metaFile: str):
 
         with open(metaFile, "r") as file:
-            trainDict = json.load(file)
+            imageDict = json.load(file)
 
-        trainImages = CELImage.FromJSON(self._dir, trainDict)
-        truthImages = CELImage.FromJSON(self._dir, trainDict)
+        trainImages = CELImage.FromJSON(self._dir, imageDict)
+        truthImages = CELImage.FromJSON(self._dir, imageDict)
 
         trainImages = self._trainFilter(trainImages)
         truthImages = self._truthFilter(truthImages)

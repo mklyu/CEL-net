@@ -1,8 +1,8 @@
 import torch
 import torch.utils.data
+import os
 
 from .cel import (
-    CELPair,
     DatasetFilterCallbackType,
     nopFilter,
     CELDatasetLoader,
@@ -11,21 +11,20 @@ from image_dataset.image_dataset import ImageDataset
 
 from typing import Callable
 
-TRAIN_META_DIR = "train.JSON"
-TEST_META_DIR = "test.JSON"
-
-
 class CELDataloaderFactory:
     def __init__(
         self,
-        inputFolder: str,
+        trainJSONDir: str,
+        testJSONDir: str,
         patchSize: int = 512,
         datasetWorkers: int = 0,
         batch: int = 1,
         cacheLimit: int = 0,
     ):
 
-        self._dir = inputFolder
+        self._trainJSON = trainJSONDir
+        self._testJSON = testJSONDir
+
         self._patchSize = patchSize
         self._datasetWorkers = datasetWorkers
         self._batch = batch
@@ -37,8 +36,9 @@ class CELDataloaderFactory:
         inputFilter: DatasetFilterCallbackType = nopFilter,
         truthFilter: DatasetFilterCallbackType = nopFilter,
     ):
-        datasetLoader = CELDatasetLoader(self._dir, inputFilter, truthFilter)
-        trainSet = datasetLoader.GetSet(self._dir + TRAIN_META_DIR)
+        jsonDir = os.path.split(self._trainJSON)[0] + "/"
+        datasetLoader = CELDatasetLoader(jsonDir, inputFilter, truthFilter)
+        trainSet = datasetLoader.GetSet(self._trainJSON)
 
         trainDataset = ImageDataset(trainSet, transforms, cacheLimit=self._cacheLimit)
 
@@ -57,8 +57,9 @@ class CELDataloaderFactory:
         inputFilter: DatasetFilterCallbackType = nopFilter,
         truthFilter: DatasetFilterCallbackType = nopFilter,
     ):
-        datasetLoader = CELDatasetLoader(self._dir, inputFilter, truthFilter)
-        testSet = datasetLoader.GetSet(self._dir + TEST_META_DIR)
+        jsonDir = os.path.split(self._testJSON)[0] + "/"
+        datasetLoader = CELDatasetLoader(jsonDir, inputFilter, truthFilter)
+        testSet = datasetLoader.GetSet(self._testJSON)
 
         testDataset = ImageDataset(testSet, transforms, cacheLimit=self._cacheLimit)
 

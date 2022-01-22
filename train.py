@@ -30,7 +30,9 @@ BATCH_COUNT = 2
 # Maximum RAM allowed to be used in megabytes. Approx 80-60 gigabytes is optimal
 IMAGE_CACHE_SIZE_MAX = 10000
 
-META_FILES_DIRECTORY: str = "./dataset/"
+TRAIN_JSON: str = "./dataset/train.JSON"
+TEST_JSON: str = "./dataset/test.JSON"
+
 WEIGHTS_DIRECTORY: str = "./local/model.pt"
 
 # --- Dataset Filtering ---
@@ -68,7 +70,7 @@ def Run():
     tuneTruthFilter = functools.partial(cel_filters.FilterExactInList, TUNE_TRUTH_EXPOSURE)
 
     dataloaderFactory = CELDataloaderFactory(
-        META_FILES_DIRECTORY, batch=BATCH_COUNT, cacheLimit=IMAGE_CACHE_SIZE_MAX,
+        TRAIN_JSON,TEST_JSON, batch=BATCH_COUNT, cacheLimit=IMAGE_CACHE_SIZE_MAX,
     )
 
     network = CELNet(adaptive=False)
