@@ -5,6 +5,11 @@ Evgeny Hershkovitch Neiterman∗, Michael Klyuchka∗, Gil Ben-Artzi
 
 <sub>Equall contribution is marked by an asterisk (*) </sub>
 
+
+![image](https://user-images.githubusercontent.com/30417158/193465748-0673c645-3df7-4b74-998c-0080d2ba7ece.png)
+
+
+
 # Setup
 
 The code uses Python 3, with Pip as the recommended package manager.
@@ -17,14 +22,11 @@ An NVIDIA GPU is recommended for accelerated training and inference.
 
 Pytroch 1.9.0
 
-Torchvision 0.10.0
-
-
 
 For your convenience, a frozen package snapshot of our workspace is available as "pip_freeze.txt".
 
 
-Run:
+Manually create an environment:
 
 > python3 -m venv venv
 
@@ -34,20 +36,21 @@ Run:
 
 > pip3 install -r pip-requirements.txt
 
-OR:
+Or use the script:
 
-> run setup.sh [./setup.sh]
+> ./setup.sh
 
 
 The default dataset location is in the "dataset" folder
 
 Please download our dataset [here](https://arielacil-my.sharepoint.com/:f:/g/personal/neiterman_ariel_ac_il/EruoYnkCjzREtC1hbPRN3Y0BQahIPkyMVfy-dp2AqiioGQ?e=i222JI).
 Download the "test" and "train" folders and move them to the "dataset" folder.
-The JPGs are the camera's ISP output, they are not needed.
 If any errors occur during download or unzipping, try downloading subfolders manually and combining them into the original structure.
 
-Weights are stored by default in the "local" folder
-Outputs are stored by default in the "output" folder
+Weights are stored by default in the "local" folder.
+
+
+Outputs are stored by default in the "output" folder.
 
 # Train
 
@@ -75,7 +78,7 @@ TRAIN_INPUT_EXPOSURE = [0.1,0.5,1]
 
 TRAIN_TRUTH_EXPOSURE = [10]
 
-If you have enough RAM and set the cache to be high, the entire dataset will eventually be loaded to RAM and the training process will accelerate (should take about a day, depending on your machine).
+If you have enough RAM (around 80 gigabytes) and set the cache to be high, the entire dataset will eventually be loaded to RAM and the training process will accelerate (should take about a day, depending on your machine).
 
 Training directly from the disk (i.e. 0 RAM allocated) might take a week or two, depending on your disk speed.
 
@@ -107,7 +110,7 @@ We provided an undistortion code that will fix all the images inside the "output
 
 The default output of this code is the "output/undistorted" folder.
 
-Simply run:
+Run:
 
 > python3 undistort.py
 
