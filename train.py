@@ -24,7 +24,6 @@ PATCH_SIZE: Union[Tuple[int], int] = 512
 DEVICE: str = "cuda:0"
 
 # fiddle with these if training seems oddly slow
-DATASET_WORKER_COUNT: int = 2
 BATCH_COUNT = 2
 
 # Maximum RAM allowed to be used in megabytes. Approx 80-60 gigabytes is optimal
