@@ -1,4 +1,16 @@
+# CEL-Net
+### Continuous Exposure for Extreme Low-Light Imaging | [Paper](https://arxiv.org/pdf/2012.04112.pdf)
+Evgeny Hershkovitch Neiterman∗, Michael Klyuchka∗, Gil Ben-Artzi
+
+
+<sub>Equall contribution is marked by an asterisk (*) </sub>
+
 # Setup
+
+The code uses Python 3, Pip is reccomended as the package manager.
+Tested on Unbuntu 18.04 LTS.
+An NVIDIA GPU is reccomended.
+
 
 Run:
 
@@ -15,15 +27,15 @@ OR:
 > run setup.sh [./setup.sh]
 
 
-Default dataset location is at the [dataset/] folder
+Default dataset location is at the "dataset" folder
 
-Please download our dataset at: https://arielacil-my.sharepoint.com/:f:/g/personal/neiterman_ariel_ac_il/EruoYnkCjzREtC1hbPRN3Y0BQahIPkyMVfy-dp2AqiioGQ?e=3a59ro
-Download the [test] and [train] folders and move them to the [dataset/] folder.
+Please download our dataset [here](https://arielacil-my.sharepoint.com/:f:/g/personal/neiterman_ariel_ac_il/EruoYnkCjzREtC1hbPRN3Y0BQahIPkyMVfy-dp2AqiioGQ?e=i222JI).
+Download the "test" and "train" folders and move them to the "dataset" folder.
 The JPG are the camera's ISP output, they are not needed.
 If any errors occur during download or unzipping, try downloading subfolders manually and combine them into the original structure.
 
-Weights are stored by default at the [local/] folder
-Outputs are stored by default at the [output/] folder
+Weights are stored by default at the "local" folder
+Outputs are stored by default at the "output" folder
 
 # Train
 
@@ -33,7 +45,7 @@ Run:
 
 > python3 train.py
 
-Arguments to look for inside [train.py]:
+Arguments to look for inside "train.py":
 
 TRAIN_INPUT_EXPOSURE: allowed train stage input exposure
 
@@ -79,9 +91,9 @@ Make sure you have enough RAM for this too (apporx 35+ GB RAM).
 # Undistorting outputs
 
 The original dataset photos have a fisheye effect.
-We provided an undistortion code that will fix all the images inside the [output/] folder.
+We provided an undistortion code that will fix all the images inside the "output" folder.
 
-The default output of this code is the [output/undistorted/] folder.
+The default output of this code is the "output/undistorted" folder.
 
 Simply run:
 
