@@ -14,14 +14,11 @@ Evgeny Hershkovitch Neiterman∗, Michael Klyuchka∗, Gil Ben-Artzi
 
 The code uses Python 3, with Pip as the recommended package manager.
 
+PyTorch 1.9.0
 
 Tested on Unbuntu 18.04 LTS.
 
-
 An NVIDIA GPU is recommended for accelerated training and inference.
-
-Pytroch 1.9.0
-
 
 For your convenience, a frozen package snapshot of our workspace is available as "pip_freeze.txt".
 
@@ -99,9 +96,7 @@ Will run full tests on each tune factor and save data in the "output" folder.
 
 The rest of the arguments are the same as for training.
 
-If you plan to run inference on the full images, chances are you will have to switch to CPU.
-
-Make sure you have enough RAM for this too (approx 35+ GB RAM).
+If you plan to run inference on the full images, chances are you will have to switch to CPU due to very high memory requirements (approx 35+ GB RAM).
 
 # Undistorting Outputs
 
