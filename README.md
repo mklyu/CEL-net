@@ -43,6 +43,7 @@ The default dataset location is in the "dataset" folder
 Please download our dataset [here](https://arielacil-my.sharepoint.com/:f:/g/personal/neiterman_ariel_ac_il/EruoYnkCjzREtC1hbPRN3Y0BQahIPkyMVfy-dp2AqiioGQ?e=i222JI).
 Download the "test" and "train" folders and move them to the "dataset" folder.
 If any errors occur during download or unzipping, try downloading subfolders manually and combining them into the original structure.
+We additionally provide the RGB camera ISP outputs for train and test under "train_jpg" and "test_jpg" respectively, and some scenes with extra exposures not tested in the paper under "testset_extra_exposures". 
 
 Weights are stored by default in the "local" folder.
 
@@ -109,7 +110,7 @@ Run:
 
 > python3 undistort.py
 
-Please note that this code was written with full-sized images in mind. And will produce distortions with smaller patch sizes.
+Please note that this code was written with full-sized images in mind and will produce distortions with smaller patch sizes.
 
 
 
