@@ -24,18 +24,17 @@ For your convenience, a frozen package snapshot of our workspace is available as
 
 
 Manually create an environment:
-
-> python3 -m venv venv
-
-> source ./venv/bin/activate
-
-> pip3 install --upgrade pip
-
-> pip3 install -r pip-requirements.txt
+```shell
+python3 -m venv venv
+source ./venv/bin/activate
+pip3 install --upgrade pip
+pip3 install -r pip-requirements.txt
+```
 
 Or use the script:
-
-> ./setup.sh
+```shell
+./setup.sh
+```
 
 
 The default dataset location is in the "dataset" folder
@@ -54,9 +53,9 @@ Outputs are stored by default in the "output" folder.
 
 Run:
 
-> source ./venv/bin/activate
-
-> python3 train.py
+```shell
+python3 train.py
+```
 
 Arguments to look for inside "train.py":
 
@@ -85,9 +84,9 @@ Training directly from the disk (i.e. 0 RAM allocated) might take a week or two,
 
 Run:
 
-> source ./venv/bin/activate
-
-> python3 test.py
+```shell
+python3 test.py
+```
 
 Arguments to look for:
 
@@ -107,8 +106,9 @@ We provided an undistortion code that will fix all the images inside the "output
 The default output of this code is the "output/undistorted" folder.
 
 Run:
-
-> python3 undistort.py
+```shell
+python3 undistort.py
+```
 
 Please note that this code was written with full-sized images in mind and will produce distortions with smaller patch sizes.
 
@@ -119,5 +119,6 @@ Please note that this code was written with full-sized images in mind and will p
 3080ti cards might not work on standard PyTorch pip packages (as of September 2021).
 
 This might help:
-
-> pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+```shell
+pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+```
