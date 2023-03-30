@@ -1,5 +1,5 @@
 # CEL-Net
-### Continuous Exposure for Extreme Low-Light Imaging | [Paper](https://arxiv.org/pdf/2012.04112.pdf)
+### Continuous Exposure for Extreme Low-Light Imaging
 Evgeny Hershkovitch Neiterman∗, Michael Klyuchka∗, Gil Ben-Artzi
 
 
