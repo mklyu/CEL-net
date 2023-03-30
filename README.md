@@ -2,6 +2,16 @@
 ### Continuous Exposure for Extreme Low-Light Imaging
 Evgeny Hershkovitch Neiterman∗, Michael Klyuchka∗, Gil Ben-Artzi
 
+Please cite: 
+@article{klyuchka2020cel,
+  title={CEL-net: continuous exposure for extreme low-light imaging},
+  author={Klyuchka, Michael and Hershkovitch Neiterman, Evgeny and Ben-Artzi, Gil},
+  journal={arXiv e-prints},
+  pages={arXiv--2012},
+  year={2020}
+}
+
+
 
 <sub>Equall contribution is marked by an asterisk (*) </sub>
 
